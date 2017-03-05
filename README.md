@@ -4,15 +4,24 @@ Clash Of Gangs DeathMatch mod for SA:MP
 
 Инклуды:
 
-sscanf2 \n
-zcmd - Можете поменять на Pawn.CMD, если считаете нужным \n
-easydialog \n
-YSI_Coding\y_va \n
-KickBan \n
-foreach \n
-crashdetect \n
-weapon-config - дамаг информер изменён \n
-safeDialogs \n
-a_zone \n
+sscanf2
+
+zcmd - Можете поменять на Pawn.CMD, если считаете нужным 
+
+easydialog 
+
+YSI_Coding\y_va 
+
+KickBan 
+
+foreach 
+
+crashdetect 
+
+weapon-config - дамаг информер изменён 
+
+safeDialogs 
+
+a_zone 
 
 Более подробная информация здесь: позже ссылочка
