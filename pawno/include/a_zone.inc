@@ -24,8 +24,7 @@ enum zoneInfo
 	zMainID,                  // Holds the main gang zone ID.
 	npart[5],                 // Holds gang zones IDs which were used to create the first number.
 	npart2[5],                // Holds gang zones IDs which were used to create the second number.
-	border[4],                 // Holds gang zones IDs which were used to create borders.
-	dynamic
+	border[4]                 // Holds gang zones IDs which were used to create borders.
 }
 new zGangZones[1024][zoneInfo];
 new zGangZonesCreated;
@@ -206,7 +205,6 @@ stock CreateZone(Float:gzMinX, Float:gzMinY, Float:gzMaxX, Float:gzMaxY)
     zGangZones[zGangZonesCreated][zPosCords][1] = gzMinY;
     zGangZones[zGangZonesCreated][zPosCords][2] = gzMaxX;
     zGangZones[zGangZonesCreated][zPosCords][3] = gzMaxY;
-    zGangZones[zGangZonesCreated][dynamic] = CreateDynamicRectangle(gzMinX, gzMinY, gzMaxX, gzMaxY);
     zGangZonesCreated += 1;
 	return (zGangZonesCreated-1);
 }
@@ -245,7 +243,6 @@ stock DestroyZone(zoneid)
        for(new bord;bord < 4;bord++)GangZoneDestroy(zGangZones[zoneid][border][bord]);
        zGangZones[zoneid][zIsUsingBorders] = false;
     }
-    DestroyDynamicArea(zGangZones[zoneid][dynamic]);
     zGangZones[zoneid][zExists] = false;
     zGangZonesCreated -= 1;
 	return 1;
@@ -735,55 +732,3 @@ stock agz_GangZoneCreateSecondNumber(gzid,gznum,Float:centposx,Float:centposy,Fl
 	  }
 	}
 }
-
-public OnPlayerEnterDynamicArea(playerid, areaid)
-{
-    for(new zonee = 0; zonee < MAX_GANG_ZONES; zonee++)
-	{
-	    if(zGangZones[zonee][zExists])
-	    {
-			if(areaid == zGangZones[zonee][dynamic])
-	    	{
-	    	    CallLocalFunction("OnPlayerEnterGangZone", "dd", playerid, zonee);
-	    	    break;
-	    	}
-	    }
-	}
-    return CallLocalFunction("GZ_OnPlayerEnterDynamicArea", "ii", playerid, areaid);
-}
-#if defined _ALS_OnPlayerEnterDynamicArea
-	#undef OnPlayerEnterDynamicArea
-#else
-	#define _ALS_OnPlayerEnterDynamicArea
-#endif
-#define OnPlayerEnterDynamicArea GZ_OnPlayerEnterDynamicArea
-forward GZ_OnPlayerEnterDynamicArea(playerid, areaid);
-
-//the system callback
-forward OnPlayerEnterGangZone(playerid, zone);
-
-public OnPlayerLeaveDynamicArea(playerid, areaid)
-{
-    for(new zonee = 0; zonee < MAX_GANG_ZONES; zonee++)
-	{
-	    if(zGangZones[zonee][zExists])
-	    {
-			if(areaid == zGangZones[zonee][dynamic])
-	    	{
-	    	    CallLocalFunction("OnPlayerLeaveGangZone", "dd", playerid, zonee);
-	    	    break;
-	    	}
-	    }
-	}
-    return CallLocalFunction("GZ_OnPlayerLeaveDynamicArea", "ii", playerid, areaid);
-}
-#if defined _ALS_OnPlayerLeaveDynamicArea
-	#undef OnPlayerLeaveDynamicArea
-#else
-	#define _ALS_OnPlayerLeaveDynamicArea
-#endif
-#define OnPlayerLeaveDynamicArea GZ_OnPlayerLeaveDynamicArea
-forward GZ_OnPlayerLeaveDynamicArea(playerid, areaid);
-
-//the system callback
-forward OnPlayerLeaveGangZone(playerid, zone);
