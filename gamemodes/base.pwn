@@ -2328,7 +2328,7 @@ public OnScriptUpdate()
 	}
 	if(startarena == true){
 		RoundSeconds--;
-		if(RoundSeconds < 0) {
+		if(RoundSeconds == 1) {
 			RoundSeconds = 59;		 
 			RoundMints--;
 			if(RoundMints < 0){
