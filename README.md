@@ -1,6 +1,7 @@
 # clashofgangs
 Clash Of Gangs DeathMatch mod for SA:MP
 
+**Написан на base.pwn (SQLite) от Gammix'a
 
 Инклуды:
 
