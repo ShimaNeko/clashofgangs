@@ -53,13 +53,13 @@ new rtvs;
 
 new randomMessages[][] =
 {
-	"{808080}[HELP] "COL_WHITE"РҐРѕС‡РµС€СЊ РїРѕРјРµРЅСЏС‚СЊ РїРѕРіРѕРґСѓ Рё РІСЂРµРјСЏ? РСЃРїРѕР»СЊР·СѓР№ "COL_GREEN"/weather (/w) "COL_WHITE"Рё "COL_GREEN"/time (/t)",
-	"{808080}[HELP] "COL_WHITE"РљРѕРјР°РЅРґР°, РєРѕС‚РѕСЂР°СЏ РїРѕРјРѕР¶РµС‚ РІ Р»СЋР±СѓСЋ РјРёРЅСѓС‚Сѓ: "COL_GREEN"/help",
-	"{808080}[INFO] "COL_WHITE"Р’СЃСЏ РёРЅС„РѕСЂРјР°С†РёСЏ РЅР°С…РѕРґРёС‚СЃСЏ РЅР° СЃР°Р№С‚Рµ! "COL_GREEN"sa-gdm.ru",
-	"{808080}[INFO] "COL_WHITE"Р’СЃС‚СѓРїР°Р№ РІ РіСЂСѓРїРїСѓ Р’РєРѕРЅС‚Р°РєС‚Рµ! "COL_GREEN"vk.com/unknowncommand",
-	"{808080}[HELP] "COL_WHITE"РџРѕРјРѕС‰СЊ РїРѕ Р±Р°РЅРґР°Рј: "COL_GREEN"/ghelp",
-	"{808080}[HELP] "COL_WHITE"РҐРѕС‚РёС‚Рµ РѕС‚РґРѕС…РЅСѓС‚СЊ? РСЃРїРѕР»СЊР·СѓР№С‚Рµ "COL_GREEN"/afk",
-	"{808080}[INFO] "COL_WHITE"РћР±С‰Р°Р№С‚РµСЃСЊ СЃ РёРіСЂРѕРєР°РјРё Рё Р°РґРјРёРЅРёСЃС‚СЂР°С†РёРµР№ СЃРµСЂРІРµСЂР° РІ РґРёСЃРєРѕСЂРґРµ! "COL_GREEN"discord.gg/DqmMvsq"
+	"{808080}[HELP] "COL_WHITE"Хочешь поменять погоду и время? Используй "COL_GREEN"/weather (/w) "COL_WHITE"и "COL_GREEN"/time (/t)",
+	"{808080}[HELP] "COL_WHITE"Команда, которая поможет в любую минуту: "COL_GREEN"/help",
+	"{808080}[INFO] "COL_WHITE"Вся информация находится на сайте! "COL_GREEN"sa-gdm.ru",
+	"{808080}[INFO] "COL_WHITE"Вступай в группу Вконтакте! "COL_GREEN"vk.com/unknowncommand",
+	"{808080}[HELP] "COL_WHITE"Помощь по бандам: "COL_GREEN"/ghelp",
+	"{808080}[HELP] "COL_WHITE"Хотите отдохнуть? Используйте "COL_GREEN"/afk",
+	"{808080}[INFO] "COL_WHITE"Общайтесь с игроками и администрацией сервера в дискорде! "COL_GREEN"discord.gg/DqmMvsq"
 };
 
 new connect = 0;
@@ -74,17 +74,17 @@ new Text:RequestClassTD[2];
 
 new const SECURITY_QUESTIONS[][MAX_SECURITY_QUESTION_SIZE] =
 {
-	"Р’Р°С€Рµ РїСЂРѕР·РІРёС‰Рµ РІ РґРµС‚СЃС‚РІРµ?",
-	"РРјСЏ РІР°С€РµРіРѕ Р»СѓС‡С€РµРіРѕ РґСЂСѓРіР°?",
-	"Р’ РєР°РєРѕРј РіРѕСЂРѕРґРµ РїРѕР·РЅР°РєРѕРјРёР»РёСЃСЊ РІР°С€Рё СЂРѕРґРёС‚РµР»Рё?",
-	"Р’Р°С€Р° Р»СЋР±РёРјР°СЏ РєРѕРјР°РЅРґР°?",
-	"Р’Р°С€ Р»СЋР±РёРјС‹Р№ РјСѓРІРёРє?",
-	"РРјСЏ РІР°С€РµР№ РїРµСЂРІРѕР№ РґРµРІСѓС€РєРё, РєРѕС‚РѕСЂСѓСЋ РїРѕС†РµР»РѕРІР°Р»Рё?",
-	"РљР°РєРѕР№ РІР°Рј Р°РІС‚РѕРјРѕР±РёР»СЊ РІРїРµСЂРІС‹Рµ РїРѕРЅСЂР°РІРёР»СЃСЏ?",
-	"РРјСЏ РіРѕСЃРїРёС‚Р°Р»СЏ, РіРґРµ РІС‹ Р»РµС‡РёР»РёСЃСЊ?",
-	"Р’Р°С€ СЃСѓРїРµСЂРіРµСЂРѕР№ РІ РґРµС‚СЃС‚РІРµ?",
-	"Р’Р°С€ Р»СЋР±РёРјРѕРµ РѕСЂСѓР¶РёРµ РІ СЃР°РјРїРµ?",
-	"РРјСЏ РїРѕСЃР»РµРґРЅРµРіРѕ Р»СЋР±РёРјРѕРіРѕ СѓС‡РёС‚РµР»СЏ?"
+	"Ваше прозвище в детстве?",
+	"Имя вашего лучшего друга?",
+	"В каком городе познакомились ваши родители?",
+	"Ваша любимая команда?",
+	"Ваш любимый мувик?",
+	"Имя вашей первой девушки, которую поцеловали?",
+	"Какой вам автомобиль впервые понравился?",
+	"Имя госпиталя, где вы лечились?",
+	"Ваш супергерой в детстве?",
+	"Ваш любимое оружие в сампе?",
+	"Имя последнего любимого учителя?"
 };
 
 new DuelTimer[MAX_PLAYERS];
@@ -563,7 +563,7 @@ new gangs = 0;
 
 
 main(){
-	print("Р’СЃСЏРєРѕР№ С…СѓР№РЅРё Р·РґРµСЃСЊ РЅРµ Р±СѓРґРµС‚, РЅРµ Р¶РґРё");
+	print("Всякой хуйни здесь не будет, не жди");
 }
 
 IpToLong(const address[])
@@ -585,36 +585,36 @@ ReturnTimelapse(start, till)
 		MONTH = 30 * DAY;
 
 	if (seconds == 1)
-		format(ret, sizeof(ret), "СЃРµРєСѓРЅРґСѓ");
+		format(ret, sizeof(ret), "секунду");
 	if (seconds < (1 * MINUTE))
-		format(ret, sizeof(ret), "%i СЃРµРєСѓРЅРґ", seconds);
+		format(ret, sizeof(ret), "%i секунд", seconds);
 	else if (seconds < (2 * MINUTE))
-		format(ret, sizeof(ret), "РјРёРЅСѓС‚Сѓ");
+		format(ret, sizeof(ret), "минуту");
 	else if (seconds < (45 * MINUTE))
-		format(ret, sizeof(ret), "%i РјРёРЅСѓС‚", (seconds / MINUTE));
+		format(ret, sizeof(ret), "%i минут", (seconds / MINUTE));
 	else if (seconds < (90 * MINUTE))
-		format(ret, sizeof(ret), "С‡Р°СЃ");
+		format(ret, sizeof(ret), "час");
 	else if (seconds < (24 * HOUR))
-		format(ret, sizeof(ret), "%i С‡Р°СЃРѕРІ", (seconds / HOUR));
+		format(ret, sizeof(ret), "%i часов", (seconds / HOUR));
 	else if (seconds < (48 * HOUR))
-		format(ret, sizeof(ret), "РґРµРЅСЊ");
+		format(ret, sizeof(ret), "день");
 	else if (seconds < (30 * DAY))
-		format(ret, sizeof(ret), "%i РґРЅРµР№", (seconds / DAY));
+		format(ret, sizeof(ret), "%i дней", (seconds / DAY));
 	else if (seconds < (12 * MONTH))
     {
 		new months = floatround(seconds / DAY / 30);
       	if (months <= 1)
-			format(ret, sizeof(ret), "РјРµСЃСЏС†");
+			format(ret, sizeof(ret), "месяц");
       	else
-			format(ret, sizeof(ret), "%i РјРµСЃСЏС†Р°", months);
+			format(ret, sizeof(ret), "%i месяца", months);
 	}
     else
     {
       	new years = floatround(seconds / DAY / 365);
       	if (years <= 1)
-			format(ret, sizeof(ret), "РіРѕРґ");
+			format(ret, sizeof(ret), "год");
       	else
-			format(ret, sizeof(ret), "%i РіРѕРґР°/Р»РµС‚", years);
+			format(ret, sizeof(ret), "%i года/лет", years);
 	}
 	return ret;
 }
@@ -678,7 +678,7 @@ public OnGameModeInit()
         GangsNew[gangs][Exp] = db_get_field_assoc_int(Result, "dmg");
         GangsNew[gangs][LeaderId] = db_get_field_assoc_int(Result, "leaderid"); 
         GangsNew[gangs][Color] = db_get_field_assoc_int(Result, "Color"); 
-        printf("Р—Р°РіСЂСѓР¶РµРЅР° %s[%d] СЃ %d exp, С†РІРµС‚РѕРј %d Рё Р»РёРґРµСЂ Сѓ РЅР°СЃ %d id РІ Р±Рґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ Рё РІСЃРµРіРѕ %d Р±Р°РЅРґ", GangsNew[gangs][Tag], GangsNew[gangs][gangid], GangsNew[gangs][Exp], GangsNew[gangs][Color], GangsNew[gangs][LeaderId], gangs+1); 
+        printf("Загружена %s[%d] с %d exp, цветом %d и лидер у нас %d id в бд пользователя и всего %d банд", GangsNew[gangs][Tag], GangsNew[gangs][gangid], GangsNew[gangs][Exp], GangsNew[gangs][Color], GangsNew[gangs][LeaderId], gangs+1); 
         gangs++;     	
        	db_next_row(Result);
 
@@ -694,7 +694,7 @@ public OnGameModeInit()
         zones[i][ID] = db_get_field_assoc_int(Resultt, "ID")-1;
         zones[i][Gangid] = db_get_field_assoc_int(Resultt, "Gangid"); 
         zones[i][Exp] = db_get_field_assoc_int(Resultt, "Exp");
-        printf("Р—Р°РіСЂСѓР¶РµРЅР° Р·РѕРЅР° РЅРѕРјРµСЂ %d СЃ РєРѕРЅС‚СЂРѕР»РёСЂСѓСЋС‰РµРј %d Рё %d exp", zones[i][ID], zones[i][Gangid], zones[i][Exp]); 	
+        printf("Загружена зона номер %d с контролирующем %d и %d exp", zones[i][ID], zones[i][Gangid], zones[i][Exp]); 	
        	db_next_row(Resultt);
     }
     db_free_result( Resultt );     
@@ -854,7 +854,7 @@ public OnPlayerDisconnect(playerid, reason)
 	if(GetPVarInt(playerid, "ReadyToDuel") == 2){
 		foreach(new i: Player){
 		    if(GetPVarInt(playerid, "ReadyToDuel") == 2 && GetPVarInt(i, "ReadyToDuel") == 2 && GetPlayerVirtualWorld(playerid) == GetPlayerVirtualWorld(i)){
-		    	va_SendClientMessageToAll(-1, "%s РІС‹С€РµР» СЃ РґСѓРµР»Рё РїСЂРѕС‚РёРІ %s", eUser[playerid][Name], eUser[i][Name]);
+		    	va_SendClientMessageToAll(-1, "%s вышел с дуели против %s", eUser[playerid][Name], eUser[i][Name]);
 			}
 		}
 	}		
@@ -886,7 +886,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 		   SpawnPlayer(killerid);
 		   eUser[killerid][DuelWon]++;
 		   eUser[playerid][DuelLose]++;
-		   va_SendClientMessageToAll(-1, ""COL_RED"%s {FFFFFF}РІС‹РёРіСЂР°Р» РґСѓРµР»СЊ Сѓ "COL_RED"%s", eUser[killerid][Name], eUser[playerid][Name]);
+		   va_SendClientMessageToAll(-1, ""COL_RED"%s {FFFFFF}выиграл дуель у "COL_RED"%s", eUser[killerid][Name], eUser[playerid][Name]);
 		   SetPVarInt(playerid, "ReadyToDuel", 0);
 		   SetPVarInt(killerid, "ReadyToDuel", 0);
 		   GameTextForPlayer(playerid, "~w~Nice try...", 3000, 1);
@@ -921,7 +921,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 		PlayerTextDrawHide(playerid, DeathInfo[1][playerid]);
 
 		if(GetPVarInt(playerid, "Spree") > 3){
-		    va_SendClientMessageToAll(-1, ""COL_RED"%s {FFFFFF}СЃР±РёР» РєРёР»Р»-СЃС‚СЂРёРє РёРіСЂРѕРєСѓ "COL_RED"%s "COL_DEFAULT"(%d СѓР±РёР№СЃС‚РІ)", eUser[killerid][Name], eUser[playerid][Name], GetPVarInt(playerid, "Spree"));
+		    va_SendClientMessageToAll(-1, ""COL_RED"%s {FFFFFF}сбил килл-стрик игроку "COL_RED"%s "COL_DEFAULT"(%d убийств)", eUser[killerid][Name], eUser[playerid][Name], GetPVarInt(playerid, "Spree"));
 		}
 
 		SetPVarInt(playerid, "Spree", 0);
@@ -951,7 +951,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 	       		PlayerTextDrawSetString(killerid, killsandexp[killerid][0], iString); 
 	       		PlayerTextDrawShow(killerid, killsandexp[killerid][0]);
 	       		SetTimerEx("DoubleExp", 3300, false, "i", killerid);
-	       		va_SendClientMessageToAll(-1, "%s "COL_DEFAULT"СЃРґРµР»Р°Р» "COL_RED"RAMPAGE!", eUser[killerid][Name]);
+	       		va_SendClientMessageToAll(-1, "%s "COL_DEFAULT"сделал "COL_RED"RAMPAGE!", eUser[killerid][Name]);
 	       		if(eUser[playerid][Level] < 5) GivePlayerWeapon(playerid, 34, 150);
 	       	}	
 	       	case 10:{
@@ -977,10 +977,10 @@ public OnPlayerDeath(playerid, killerid, reason)
 	    PlayerTextDrawSetString(killerid, InfoStats[killerid][1], iString);
 
 	    if(800*eUser[killerid][Level] < eUser[killerid][e_USER_MONEY]){
-	    	SendClientMessage(killerid, -1, ""COL_DEFAULT"РџРѕР·РґСЂР°РІР»СЏРµРј, РІС‹ РїРµСЂРµС€Р»Рё РЅР° РЅРѕРІС‹Р№ СѓСЂРѕРІРµРЅСЊ!");
+	    	SendClientMessage(killerid, -1, ""COL_DEFAULT"Поздравляем, вы перешли на новый уровень!");
 	    	eUser[killerid][Level]++;
 	    }
-        format(iString, sizeof(iString), "РЈР±РёР»: "COL_WHITE"%s", eUser[killerid][Name]);
+        format(iString, sizeof(iString), "Убил: "COL_WHITE"%s", eUser[killerid][Name]);
         SetPlayerChatBubble(playerid, iString, 0xff7518FF, 30.0, 6000);    
 	}  	
 	return true;
@@ -1024,8 +1024,8 @@ public OnPlayerRequestSpawn(playerid)
 	    return 0;
 	}
     if(GetPVarInt(playerid, "GunOne") == 0 && GetPVarInt(playerid, "GunTwo") == 0 && GetPVarInt(playerid, "GunThree") == 0 && GetPVarInt(playerid, "GunFourth") == 0){
-        SendClientMessage(playerid, -1, "РўРµРїРµСЂСЊ РІС‹Р±РµСЂРёС‚Рµ РѕСЂСѓР¶РёРµ.");
-        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+        SendClientMessage(playerid, -1, "Теперь выберите оружие.");
+        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
         return false;
     }	
 	return 1;
@@ -1049,7 +1049,7 @@ public OnPlayerSpawn(playerid)
 		SetPlayerScore(playerid, eUser[playerid][e_USER_MONEY]);
 		GivePlayerMoney(playerid, eUser[playerid][e_USER_MONEY]);	    
 		if(eUser[playerid][GangId] != 0) PlayerTextDrawShow(playerid, GangInfo[playerid]);
-		SendClientMessage(playerid, -1, ""COL_DEFAULT"/changeskin {FFFFFF}- СЃРјРµРЅРёС‚СЊ СЃРєРёРЅ, РµСЃР»Рё Р·РЅР°РµС‚Рµ id.");
+		SendClientMessage(playerid, -1, ""COL_DEFAULT"/changeskin {FFFFFF}- сменить скин, если знаете id.");
 		ZoneNumberFlashForPlayer(playerid,arena,0xCC0000FF);
 		//TextDrawHideForPlayer(playerid, RequestClass);
 		TextDrawHideForPlayer(playerid, RequestClassTD[0]);
@@ -1090,7 +1090,7 @@ public OnPlayerJoin(playerid)
 	{
 	    SendClientMessage(playerid, COLOR_WHITE, "");
 	}
-	SendClientMessage(playerid, COLOR_WHITE, "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ "COL_RED"CLASH OF GANGS!");
+	SendClientMessage(playerid, COLOR_WHITE, "Добро пожаловать в "COL_RED"CLASH OF GANGS!");
 	PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 
 	new name[MAX_PLAYER_NAME];
@@ -1121,8 +1121,8 @@ public OnPlayerJoin(playerid)
 		eUser[playerid][DuelLose] = 0;
 		eUser[playerid][DuelWon] = 0;
 
-		Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 1/3]", COL_WHITE "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РЅР°С€ СЃРµСЂРІРµСЂ. Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё "COL_GREEN"3 РїСЂРѕСЃС‚Рѕ С€Р°РіР°, "COL_WHITE"С‡С‚РѕР±С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІС‚Р°СЊСЃСЏ РЅР° СЃРµСЂРІРµСЂРµ!\nР’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ "COL_TOMATO"РЅРёР¶Рµ.", "РџСЂРѕРґРѕР»Р¶РёС‚СЊ", "РќР°СЃС‚СЂРѕР№РєРё");
-		SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 1/3] Р’РІРµРґРё РІР°С€ РїР°СЂРѕР»СЊ РІ РѕРєРѕС€РєРѕ.");
+		Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Регистрация аккаунта... [Шаг: 1/3]", COL_WHITE "Добро пожаловать на наш сервер. Вы должны пройти "COL_GREEN"3 просто шага, "COL_WHITE"чтобы зарегистрировтаься на сервере!\nВведите пароль "COL_TOMATO"ниже.", "Продолжить", "Настройки");
+		SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 1/3] Введи ваш пароль в окошко.");
 	}
 	else
 	{
@@ -1138,8 +1138,8 @@ public OnPlayerJoin(playerid)
 			new lock_timestamp = db_get_field_int(lock_result, 0);
 			if ((gettime() - lock_timestamp) < 0)
 		    {
-		        SendClientMessage(playerid, COLOR_TOMATO, "РР·РІРёРЅРёС‚Рµ, РЅРѕ РІР°С€ Р°РєРєР°СѓРЅС‚ РІСЂРµРјРµРЅРЅРѕ Р·Р°Р±Р°РЅРµРЅ. РџРѕРїС‹С‚РѕРє "#MAX_LOGIN_ATTEMPTS"/"#MAX_LOGIN_ATTEMPTS" Р±С‹Р»Рѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРѕ.");
-		        format(string, sizeof(string), "РџРѕРїСЂРѕР±СѓР№С‚Рµ С‡РµСЂРµР· %s.", ReturnTimelapse(gettime(), lock_timestamp));
+		        SendClientMessage(playerid, COLOR_TOMATO, "Извините, но ваш аккаунт временно забанен. Попыток "#MAX_LOGIN_ATTEMPTS"/"#MAX_LOGIN_ATTEMPTS" было использовано.");
+		        format(string, sizeof(string), "Попробуйте через %s.", ReturnTimelapse(gettime(), lock_timestamp));
 				SendClientMessage(playerid, COLOR_TOMATO, string);
 				db_free_result(result);
 				db_free_result(lock_result);
@@ -1174,7 +1174,7 @@ public OnPlayerJoin(playerid)
 		eUser[playerid][DuelWon] = db_get_field_assoc_int(result, "Wins");
 		eUser[playerid][DuelLose] = db_get_field_assoc_int(result, "Loses");
 
-		Dialog_Show(playerid, LOGIN, DIALOG_STYLE_PASSWORD, "РђРІС‚РѕСЂРёР·Р°С†РёСЏ...", COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РїР°СЂРѕР»СЊ РІ РѕРєРѕС€РєРѕ. Р•СЃР»Рё "COL_YELLOW""#MAX_LOGIN_ATTEMPTS" "COL_WHITE"РїРѕРїС‹С‚РєРё Р±СѓРґСѓС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅС‹, Р°РєРєР°СѓРЅС‚ Р±СѓРґРµС‚ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅ РЅР° "COL_YELLOW""#MAX_ACCOUNT_LOCKTIME" "COL_WHITE"РјРёРЅСѓС‚.", "Р”Р°Р»СЊС€Рµ", "РќР°СЃС‚СЂРѕР№РєРё");
+		Dialog_Show(playerid, LOGIN, DIALOG_STYLE_PASSWORD, "Авторизация...", COL_WHITE "Введите ваш пароль в окошко. Если "COL_YELLOW""#MAX_LOGIN_ATTEMPTS" "COL_WHITE"попытки будут использованы, аккаунт будет заблокирован на "COL_YELLOW""#MAX_ACCOUNT_LOCKTIME" "COL_WHITE"минут.", "Дальше", "Настройки");
 	}
 
 	db_free_result(result);
@@ -1192,8 +1192,8 @@ public OnPlayerJoin(playerid)
 DIALOG:DIALOG_CHANGE(playerid, response, listitem, inputtext[]){
     if(!response) {
         if(GetPVarInt(playerid, "GunOne") == 0 && GetPVarInt(playerid, "GunTwo") == 0 && GetPVarInt(playerid, "GunThree") == 0 && GetPVarInt(playerid, "GunFourth") == 0){
-        	SendClientMessage(playerid, -1, "Р’С‹ РЅРµ РІР·СЏР»Рё РѕСЂСѓР¶РёРµ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІС‹Р±РµСЂРёС‚Рµ С…РѕС‚СЊ С‡С‚Рѕ-РЅРёР±СѓРґСЊ.");
-        	Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+        	SendClientMessage(playerid, -1, "Вы не взяли оружие. Пожалуйста, выберите хоть что-нибудь.");
+        	Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
             return false;
         }
         SpawnPlayer(playerid);
@@ -1201,15 +1201,15 @@ DIALOG:DIALOG_CHANGE(playerid, response, listitem, inputtext[]){
     }
     if(response){
         switch(listitem){
-            case 0: Dialog_Show(playerid, DIALOG_CHANGE1, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ 1-РіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
-            case 1: Dialog_Show(playerid, DIALOG_CHANGE2, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ РІС‚РѕСЂРѕРіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ");
+            case 0: Dialog_Show(playerid, DIALOG_CHANGE1, DIALOG_STYLE_LIST, "Выбор оружия для 1-го слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Назад");
+            case 1: Dialog_Show(playerid, DIALOG_CHANGE2, DIALOG_STYLE_LIST, "Выбор оружия для второго слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Закрыть");
             case 2:{
-            	if(eUser[playerid][Level] < 5) return SendClientMessage(playerid, -1, "РўСЂРµС‚РёР№ СЃР»РѕС‚ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ РґРѕСЃС‚РёР¶РµРЅРёСЏ РїСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ."), Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ");
-            	Dialog_Show(playerid, DIALOG_CHANGE3, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ С‚СЂРµС‚СЊРµРіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ");
+            	if(eUser[playerid][Level] < 5) return SendClientMessage(playerid, -1, "Третий слот будет доступен только после достижения пятого уровня."), Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Закрыть");
+            	Dialog_Show(playerid, DIALOG_CHANGE3, DIALOG_STYLE_LIST, "Выбор оружия для третьего слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Закрыть");
             }	
             case 3: {
-            	if(eUser[playerid][Level] < 10) return SendClientMessage(playerid, -1, "РўСЂРµС‚РёР№ СЃР»РѕС‚ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ РґРѕСЃС‚РёР¶РµРЅРёСЏ РґРµСЃСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ."), Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ");
-            	Dialog_Show(playerid, DIALOG_CHANGE4, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ С‡РµС‚РІРµСЂС‚РѕРіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ");
+            	if(eUser[playerid][Level] < 10) return SendClientMessage(playerid, -1, "Третий слот будет доступен только после достижения десятого уровня."), Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Закрыть");
+            	Dialog_Show(playerid, DIALOG_CHANGE4, DIALOG_STYLE_LIST, "Выбор оружия для четвертого слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Закрыть");
         	}
         }
     }
@@ -1217,49 +1217,49 @@ DIALOG:DIALOG_CHANGE(playerid, response, listitem, inputtext[]){
 }
  
 DIALOG:DIALOG_CHANGE1(playerid, response, listitem, inputtext[]){
-    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     if(response){
         switch(listitem){
             case 0: SetPVarInt(playerid, "GunOne", 24);
             case 1: SetPVarInt(playerid, "GunOne", 25);
             case 2: {
-                 if(eUser[playerid][Level] < 5) return Dialog_Show(playerid, DIALOG_CHANGE1, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ 1-РіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ"), SendClientMessage(playerid, -1, "Р­С‚Рѕ РѕСЂСѓР¶РёРµ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРЅРѕ РїРѕ РґРѕСЃС‚РёР¶РµРЅРёСЋ РїСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ.");
+                 if(eUser[playerid][Level] < 5) return Dialog_Show(playerid, DIALOG_CHANGE1, DIALOG_STYLE_LIST, "Выбор оружия для 1-го слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Назад"), SendClientMessage(playerid, -1, "Это оружие будет доступно по достижению пятого уровня.");
                  SetPVarInt(playerid, "GunOne", 34);
             }
             case 3: {
-                 if(eUser[playerid][Level] < 10) return Dialog_Show(playerid, DIALOG_CHANGE1, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ 1-РіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ"), SendClientMessage(playerid, -1, "Р­С‚Рѕ РѕСЂСѓР¶РёРµ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРЅРѕ РїРѕ РґРѕСЃС‚РёР¶РµРЅРёСЋ РґРµСЃСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ.");
+                 if(eUser[playerid][Level] < 10) return Dialog_Show(playerid, DIALOG_CHANGE1, DIALOG_STYLE_LIST, "Выбор оружия для 1-го слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Назад"), SendClientMessage(playerid, -1, "Это оружие будет доступно по достижению десятого уровня.");
 
                  SetPVarInt(playerid, "GunOne", 31);
             }
         }
-        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     }
 	return 1;    
 }
  
 DIALOG:DIALOG_CHANGE2(playerid, response, listitem, inputtext[]){
-    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     if(response){
         switch(listitem){
             case 0: SetPVarInt(playerid, "GunTwo", 24);
             case 1: SetPVarInt(playerid, "GunTwo", 25);
             case 2: {
-                 if(eUser[playerid][Level] < 5) return Dialog_Show(playerid, DIALOG_CHANGE2, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ РІС‚РѕСЂРѕРіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ"), SendClientMessage(playerid, -1, "Р­С‚Рѕ РѕСЂСѓР¶РёРµ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРЅРѕ РїРѕ РґРѕСЃС‚РёР¶РµРЅРёСЋ РїСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ.");
+                 if(eUser[playerid][Level] < 5) return Dialog_Show(playerid, DIALOG_CHANGE2, DIALOG_STYLE_LIST, "Выбор оружия для второго слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Закрыть"), SendClientMessage(playerid, -1, "Это оружие будет доступно по достижению пятого уровня.");
 
                  SetPVarInt(playerid, "GunTwo", 34);
             }
             case 3: {
-                 if(eUser[playerid][Level] < 10) return Dialog_Show(playerid, DIALOG_CHANGE2, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ РІС‚РѕСЂРѕРіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ"), SendClientMessage(playerid, -1, "Р­С‚Рѕ РѕСЂСѓР¶РёРµ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРЅРѕ РїРѕ РґРѕСЃС‚РёР¶РµРЅРёСЋ РґРµСЃСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ.");
+                 if(eUser[playerid][Level] < 10) return Dialog_Show(playerid, DIALOG_CHANGE2, DIALOG_STYLE_LIST, "Выбор оружия для второго слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Закрыть"), SendClientMessage(playerid, -1, "Это оружие будет доступно по достижению десятого уровня.");
                  SetPVarInt(playerid, "GunTwo", 31);
             }
         }
-        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     }
 	return 1;    
 }
 
 DIALOG:DIALOG_CHANGE3(playerid, response, listitem, inputtext[]){
-    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     if(response){
         switch(listitem){
             case 0: SetPVarInt(playerid, "GunThree", 24);
@@ -1268,17 +1268,17 @@ DIALOG:DIALOG_CHANGE3(playerid, response, listitem, inputtext[]){
                  SetPVarInt(playerid, "GunThree", 34);
             }
             case 3: {
-                 if(eUser[playerid][Level] < 10) return Dialog_Show(playerid, DIALOG_CHANGE3, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ РґР»СЏ С‚СЂРµС‚СЊРµРіРѕ СЃР»РѕС‚Р°", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ"), SendClientMessage(playerid, -1, "Р­С‚Рѕ РѕСЂСѓР¶РёРµ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРЅРѕ РїРѕ РґРѕСЃС‚РёР¶РµРЅРёСЋ РґРµСЃСЏС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ.");
+                 if(eUser[playerid][Level] < 10) return Dialog_Show(playerid, DIALOG_CHANGE3, DIALOG_STYLE_LIST, "Выбор оружия для третьего слота", "Desert Eagle\nShotgun\nSniper Rifle\nm4", "Выбрать", "Закрыть"), SendClientMessage(playerid, -1, "Это оружие будет доступно по достижению десятого уровня.");
                  SetPVarInt(playerid, "GunThree", 31);
             }
         }
-        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     }
     return true;
 }
  
 DIALOG:DIALOG_CHANGE4(playerid, response, listitem, inputtext[]){
-    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+    if(!response) Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     if(response){
         switch(listitem){
             case 0: SetPVarInt(playerid, "GunFourth", 24);
@@ -1290,7 +1290,7 @@ DIALOG:DIALOG_CHANGE4(playerid, response, listitem, inputtext[]){
                  SetPVarInt(playerid, "GunFourth", 31);
             }
         }
-        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+        Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
     }
 	return true;
 }
@@ -1300,7 +1300,7 @@ Dialog:LOGIN(playerid, response, listitem, inputtext[])
 {
 	if (!response)
 	{
-	    Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "РќР°СЃС‚СЂРѕР№РєРё Р°РєРєР°СѓРЅС‚Р°...", "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ\nР—Р°Р±С‹Р» РЅРёРєРЅРµР№Рј\nР’С‹Р№С‚Рё", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
+	    Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "Настройки аккаунта...", "Забыл пароль\nЗабыл никнейм\nВыйти", "Выбрать", "Назад");
 	    return 1;
 	}
 
@@ -1318,14 +1318,14 @@ Dialog:LOGIN(playerid, response, listitem, inputtext[])
 			format(string, sizeof(string), "INSERT INTO `temp_blocked_users` VALUES('%s', %i, %i)", ip, lock_timestamp, eUser[playerid][e_USER_SQLID]);
 			db_query(db, string);
 
-		    SendClientMessage(playerid, COLOR_TOMATO, "РР·РІРёРЅРёС‚Рµ, РЅРѕ Р°РєРєР°СѓРЅС‚ РІСЂРµРјРµРЅРЅРѕ Р·Р°Р±Р°РЅРµРЅ. "#MAX_LOGIN_ATTEMPTS"/"#MAX_LOGIN_ATTEMPTS" РїРѕРїС‹С‚РѕРє.");
-		    format(string, sizeof(string), "Р•СЃР»Рё РІС‹ Р·Р°Р±С‹Р»Рё РїР°СЂРѕР»СЊ, РёСЃРїРѕР»СЊР·СѓР№С‚Рµ РЅР°СЃС‚СЂРѕР№РєРё РґР»СЏ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ С‡РµСЂРµР· %s РјРёРЅСѓС‚.", ReturnTimelapse(gettime(), lock_timestamp));
+		    SendClientMessage(playerid, COLOR_TOMATO, "Извините, но аккаунт временно забанен. "#MAX_LOGIN_ATTEMPTS"/"#MAX_LOGIN_ATTEMPTS" попыток.");
+		    format(string, sizeof(string), "Если вы забыли пароль, используйте настройки для восстановления через %s минут.", ReturnTimelapse(gettime(), lock_timestamp));
 			SendClientMessage(playerid, COLOR_TOMATO, string);
 		    return Kick(playerid);
 		}
 
-	    Dialog_Show(playerid, LOGIN, DIALOG_STYLE_INPUT, "РђРІС‚РѕСЂРёР·Р°С†РёСЏ...", COL_WHITE "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РІ РѕРєРѕС€РєРѕ. Р•СЃР»Рё "COL_YELLOW""#MAX_LOGIN_ATTEMPTS" "COL_WHITE"РїРѕРїС‹С‚РѕРє Р±СѓРґРµС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРѕ, С‚Рѕ Р°РєРєР°СѓРЅС‚ Р±СѓРґРµС‚ Р·Р°Р±Р°РЅРµРЅ РЅР° "COL_YELLOW""#MAX_ACCOUNT_LOCKTIME" "COL_WHITE"РјРёРЅСѓС‚.", "Continue", "Options");
-	    format(string, sizeof(string), "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ! РЈ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ: %i/"#MAX_LOGIN_ATTEMPTS" РїРѕРїС‹С‚РѕРє.", iLoginAttempts[playerid]);
+	    Dialog_Show(playerid, LOGIN, DIALOG_STYLE_INPUT, "Авторизация...", COL_WHITE "Введите пароль в окошко. Если "COL_YELLOW""#MAX_LOGIN_ATTEMPTS" "COL_WHITE"попыток будет использовано, то аккаунт будет забанен на "COL_YELLOW""#MAX_ACCOUNT_LOCKTIME" "COL_WHITE"минут.", "Continue", "Options");
+	    format(string, sizeof(string), "Неправильный пароль! У вас осталось: %i/"#MAX_LOGIN_ATTEMPTS" попыток.", iLoginAttempts[playerid]);
 		SendClientMessage(playerid, COLOR_TOMATO, string);
 	    return 1;
 	}
@@ -1337,13 +1337,13 @@ Dialog:LOGIN(playerid, response, listitem, inputtext[])
 	format(string, sizeof(string), "UPDATE `users` SET `lastlogin_timestamp` = %i, `ip` = '%s', `longip` = %i WHERE `id` = %i", gettime(), ip, IpToLong(ip), eUser[playerid][e_USER_SQLID]);
 	db_query(db, string);
 
-	format(string, sizeof(string), ""COL_DEFAULT"РЈСЃРїРµС€РЅРѕ Р°РІС‚РѕСЂРёР·РѕРІР°Р»РёСЃСЊ! Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РѕР±СЂР°С‚РЅРѕ, %s. {FFFFFF}[РџРѕСЃР»РµРґРЅРёР№ Р»РѕРіРёРЅ: %s РЅР°Р·Р°Рґ]", name, ReturnTimelapse(eUser[playerid][e_USER_LASTLOGIN_TIMESTAMP], gettime()));
+	format(string, sizeof(string), ""COL_DEFAULT"Успешно авторизовались! Добро пожаловать обратно, %s. {FFFFFF}[Последний логин: %s назад]", name, ReturnTimelapse(eUser[playerid][e_USER_LASTLOGIN_TIMESTAMP], gettime()));
 	SendClientMessage(playerid, COLOR_GREEN, string);
-	SendClientMessage(playerid, -1, "{FFFFFF}Р’РІРµРґРµРЅРёРµ "COL_DEFAULT"/help /credits");
+	SendClientMessage(playerid, -1, "{FFFFFF}Введение "COL_DEFAULT"/help /credits");
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	SetPVarInt(playerid, "LoggedIn", 1);
 	OnPlayerRequestClass(playerid, 0);
-	if(GangsNew[eUser[playerid][GangId]-1][LeaderId] == eUser[playerid][e_USER_SQLID]) va_SendClientMessage(playerid, -1, "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ, Р»РёРґРµСЂ Р±Р°РЅРґС‹ %s", GangsNew[eUser[playerid][GangId]-1][Tag]);
+	if(GangsNew[eUser[playerid][GangId]-1][LeaderId] == eUser[playerid][e_USER_SQLID]) va_SendClientMessage(playerid, -1, "Добро пожаловать, лидер банды %s", GangsNew[eUser[playerid][GangId]-1][Tag]);
 
     new Tagg[24], gangexp, gangidd = -1;
     for(new i = 0; i < MAX_GANGS; i++){
@@ -1368,14 +1368,14 @@ Dialog:REGISTER(playerid, response, listitem, inputtext[])
 {
 	if (!response)
 	{
-	    Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "РќР°СЃС‚СЂРѕР№РєРё Р°РєРєР°СѓРЅС‚Р°...", "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ\nР—Р°Р±С‹Р» РЅРёРєРЅРµР№Рј\nР’С‹Р№С‚Рё", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
+	    Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "Настройки аккаунта...", "Забыл пароль\nЗабыл никнейм\nВыйти", "Выбрать", "Назад");
 	    return 1;
 	}
 
 	if (!(MIN_PASSWORD_LENGTH <= strlen(inputtext) <= MAX_PASSWORD_LENGTH))
 	{
-	    Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 1/3]", COL_WHITE "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РЅР°С€ СЃРµСЂРІРµСЂ. Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё "COL_GREEN"3 РїСЂРѕСЃС‚Рѕ С€Р°РіР°, "COL_WHITE"С‡С‚РѕР±С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІС‚Р°СЊСЃСЏ РЅР° СЃРµСЂРІРµСЂРµ!\nР’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ "COL_TOMATO"РЅРёР¶Рµ.", "Continue", "Options");
-		SendClientMessage(playerid, COLOR_TOMATO, "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ, РѕРЅ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· "#MIN_PASSWORD_LENGTH" - "#MAX_PASSWORD_LENGTH" С…Р°СЂР°РєС‚РµСЂРѕРІ.");
+	    Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Регистрация аккаунта... [Шаг: 1/3]", COL_WHITE "Добро пожаловать на наш сервер. Вы должны пройти "COL_GREEN"3 просто шага, "COL_WHITE"чтобы зарегистрировтаься на сервере!\nВведите пароль "COL_TOMATO"ниже.", "Continue", "Options");
+		SendClientMessage(playerid, COLOR_TOMATO, "Неправильный пароль, он должен состоять из "#MIN_PASSWORD_LENGTH" - "#MAX_PASSWORD_LENGTH" характеров.");
 	    return 1;
 	}
 
@@ -1401,8 +1401,8 @@ Dialog:REGISTER(playerid, response, listitem, inputtext[])
 
 		if (!contain_number || !contain_highercase || !contain_lowercase)
 		{
-		    Dialog_Show(playerid, REGISTER, DIALOG_STYLE_INPUT, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 1/3]", COL_WHITE "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РЅР°С€ СЃРµСЂРІРµСЂ. Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё "COL_GREEN"3 РїСЂРѕСЃС‚Рѕ С€Р°РіР°, "COL_WHITE"С‡С‚РѕР±С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІС‚Р°СЊСЃСЏ РЅР° СЃРµСЂРІРµСЂРµ!\nР’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ "COL_TOMATO"РЅРёР¶Рµ.", "Р”Р°Р»РµРµ", "РќР°СЃС‚СЂРѕР№РєРё");
-			SendClientMessage(playerid, COLOR_TOMATO, "РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· С†РёС„СЂ Рё Р±СѓРєРІ.");
+		    Dialog_Show(playerid, REGISTER, DIALOG_STYLE_INPUT, "Регистрация аккаунта... [Шаг: 1/3]", COL_WHITE "Добро пожаловать на наш сервер. Вы должны пройти "COL_GREEN"3 просто шага, "COL_WHITE"чтобы зарегистрировтаься на сервере!\nВведите пароль "COL_TOMATO"ниже.", "Далее", "Настройки");
+			SendClientMessage(playerid, COLOR_TOMATO, "Пароль должен состоять из цифр и букв.");
 		    return 1;
 		}
 	#endif
@@ -1420,8 +1420,8 @@ Dialog:REGISTER(playerid, response, listitem, inputtext[])
 	    strcat(list, SECURITY_QUESTIONS[i]);
 	    strcat(list, "\n");
 	}
-	Dialog_Show(playerid, SEC_QUESTION, DIALOG_STYLE_LIST, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 2/3]", list, "Р”Р°Р»СЊС€Рµ", "РќР°Р·Р°Рґ");
-	SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 2/3] Р’С‹Р±РµСЂРёС‚Рµ РІР°С€ СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ!");
+	Dialog_Show(playerid, SEC_QUESTION, DIALOG_STYLE_LIST, "Регистрация аккаунта... [Шаг: 2/3]", list, "Дальше", "Назад");
+	SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 2/3] Выберите ваш секретный вопрос!");
 	PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 	return 1;
 }
@@ -1430,17 +1430,17 @@ Dialog:SEC_QUESTION(playerid, response, listitem, inputtext[])
 {
 	if (!response)
 	{
-	    Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Р РµРіРёСЃСЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 1/3]", COL_WHITE "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РЅР°С€ СЃРµСЂРІРµСЂ. Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё "COL_GREEN"3 РїСЂРѕСЃС‚Рѕ С€Р°РіР°, "COL_WHITE"С‡С‚РѕР±С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІС‚Р°СЊСЃСЏ РЅР° СЃРµСЂРІРµСЂРµ!\nР’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ "COL_TOMATO"РЅРёР¶Рµ.", "Р”Р°Р»РµРµ", "РќР°СЃС‚СЂРѕР№РєРё");
-		SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 1/3] Р’РІРµРґРёС‚Рµ РІР°С€ РїР°СЂРѕР»СЊ.");
+	    Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Регисрация аккаунта... [Шаг: 1/3]", COL_WHITE "Добро пожаловать на наш сервер. Вы должны пройти "COL_GREEN"3 просто шага, "COL_WHITE"чтобы зарегистрировтаься на сервере!\nВведите пароль "COL_TOMATO"ниже.", "Далее", "Настройки");
+		SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 1/3] Введите ваш пароль.");
 		return 1;
 	}
 
 	format(eUser[playerid][e_USER_SECURITY_QUESTION], MAX_SECURITY_QUESTION_SIZE, SECURITY_QUESTIONS[listitem]);
 
 	new string[256];
-	format(string, sizeof(string), COL_TOMATO "%s\n"COL_WHITE"Р’РІРµРґРёС‚Рµ РІР°С€ РѕС‚РІРµС‚ РЅР° РІРѕРїСЂРѕСЃ.", SECURITY_QUESTIONS[listitem]);
-	Dialog_Show(playerid, SEC_ANSWER, DIALOG_STYLE_INPUT, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 3/3]", string, "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РќР°Р·Р°Рґ");
-	SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 3/3] Р’РІРµРґРёС‚Рµ РѕС‚РІРµС‚ РЅР° РІР°С€ СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ Рё РїСЂРёСЃС‚СѓРїР°Р№С‚Рµ Рє РёРіСЂРµ! ;)");
+	format(string, sizeof(string), COL_TOMATO "%s\n"COL_WHITE"Введите ваш ответ на вопрос.", SECURITY_QUESTIONS[listitem]);
+	Dialog_Show(playerid, SEC_ANSWER, DIALOG_STYLE_INPUT, "Регистрация аккаунта... [Шаг: 3/3]", string, "Подтвердить", "Назад");
+	SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 3/3] Введите ответ на ваш секретный вопрос и приступайте к игре! ;)");
 	PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 	return 1;
 }
@@ -1455,8 +1455,8 @@ Dialog:SEC_ANSWER(playerid, response, listitem, inputtext[])
 		    strcat(list, SECURITY_QUESTIONS[i]);
 		    strcat(list, "\n");
 		}
-		Dialog_Show(playerid, SEC_QUESTION, DIALOG_STYLE_LIST, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 2/3]", list, "Р”Р°Р»РµРµ", "РќР°Р·Р°Рґ");
-		SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 2/3] Р’С‹Р±РµСЂРёС‚Рµ РІР°С€ СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ!");
+		Dialog_Show(playerid, SEC_QUESTION, DIALOG_STYLE_LIST, "Регистрация аккаунта... [Шаг: 2/3]", list, "Далее", "Назад");
+		SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 2/3] Выберите ваш секретный вопрос!");
 		return 1;
 	}
 
@@ -1464,9 +1464,9 @@ Dialog:SEC_ANSWER(playerid, response, listitem, inputtext[])
 
 	if (strlen(inputtext) < MIN_PASSWORD_LENGTH || inputtext[0] == ' ')
 	{
-	    format(string, sizeof(string), COL_TOMATO "%s\n"COL_WHITE"Р’РІРµРґРёС‚Рµ РІР°С€ РѕС‚РІРµС‚ РЅР° РІРѕРїСЂРѕСЃ.", SECURITY_QUESTIONS[listitem]);
-		Dialog_Show(playerid, SEC_ANSWER, DIALOG_STYLE_INPUT, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 3/3]", string, "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РќР°Р·Р°Рґ");
-		SendClientMessage(playerid, COLOR_TOMATO, "РћС‚РІРµС‚ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· "#MIN_PASSWORD_LENGTH" СЃРёРјРІРѕР»РѕРІ.");
+	    format(string, sizeof(string), COL_TOMATO "%s\n"COL_WHITE"Введите ваш ответ на вопрос.", SECURITY_QUESTIONS[listitem]);
+		Dialog_Show(playerid, SEC_ANSWER, DIALOG_STYLE_INPUT, "Регистрация аккаунта... [Шаг: 3/3]", string, "Подтвердить", "Назад");
+		SendClientMessage(playerid, COLOR_TOMATO, "Ответ должен состоять из "#MIN_PASSWORD_LENGTH" символов.");
 		return 1;
 	}
 
@@ -1488,7 +1488,7 @@ Dialog:SEC_ANSWER(playerid, response, listitem, inputtext[])
     eUser[playerid][e_USER_SQLID] = db_get_field_int(result, 0);
 	db_free_result(result);
 
-	format(string, sizeof(string), ""COL_DEFAULT"РЈСЃРїРµС€РЅРѕ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°Р»РёСЃСЊ! Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ, %s. {FFFFFF}[IP: %s]", name, ip);
+	format(string, sizeof(string), ""COL_DEFAULT"Успешно зарегистрировались! Добро пожаловать, %s. {FFFFFF}[IP: %s]", name, ip);
 	SendClientMessage(playerid, COLOR_GREEN, string);
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	SetPVarInt(playerid, "LoggedIn", 1);
@@ -1503,9 +1503,9 @@ Dialog:OPTIONS(playerid, response, listitem, inputtext[])
 	if (!response)
 	{
 		if (eUser[playerid][e_USER_SQLID] != -1)
-			Dialog_Show(playerid, LOGIN, DIALOG_STYLE_PASSWORD, "РђРІС‚РѕСЂРёР·Р°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°...", COL_WHITE "Insert your secret password to access this account. If you failed in "COL_YELLOW""#MAX_LOGIN_ATTEMPTS" "COL_WHITE"attempts, account will be locked for "COL_YELLOW""#MAX_ACCOUNT_LOCKTIME" "COL_WHITE"minutes.", "Continue", "Options");
+			Dialog_Show(playerid, LOGIN, DIALOG_STYLE_PASSWORD, "Авторизация аккаунта...", COL_WHITE "Insert your secret password to access this account. If you failed in "COL_YELLOW""#MAX_LOGIN_ATTEMPTS" "COL_WHITE"attempts, account will be locked for "COL_YELLOW""#MAX_ACCOUNT_LOCKTIME" "COL_WHITE"minutes.", "Continue", "Options");
 		else
-			Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Р РµРіРёСЃС‚СЂР°С†РёСЏ Р°РєРєР°СѓРЅС‚Р°... [РЁР°Рі: 1/3]", COL_WHITE "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РЅР°С€ СЃРµСЂРІРµСЂ. Р’С‹ РґРѕР»Р¶РЅС‹ РїСЂРѕР№С‚Рё "COL_GREEN"3 РїСЂРѕСЃС‚Рѕ С€Р°РіР°, "COL_WHITE"С‡С‚РѕР±С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІС‚Р°СЊСЃСЏ РЅР° СЃРµСЂРІРµСЂРµ!\nР’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ "COL_TOMATO"РЅРёР¶Рµ.", "Continue", "Options");
+			Dialog_Show(playerid, REGISTER, DIALOG_STYLE_PASSWORD, "Регистрация аккаунта... [Шаг: 1/3]", COL_WHITE "Добро пожаловать на наш сервер. Вы должны пройти "COL_GREEN"3 просто шага, "COL_WHITE"чтобы зарегистрировтаься на сервере!\nВведите пароль "COL_TOMATO"ниже.", "Continue", "Options");
 		return 1;
 	}
 
@@ -1515,14 +1515,14 @@ Dialog:OPTIONS(playerid, response, listitem, inputtext[])
 	    {
 	        if (eUser[playerid][e_USER_SQLID] == -1)
 	        {
-	            SendClientMessage(playerid, COLOR_TOMATO, "Р­С‚РѕС‚ Р°РєРєР°СѓРЅС‚ РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РЅР°Р¶Р°С‚СЊ РЅР° 'Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ'");
-	        	Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "РќР°СЃС‚СЂРѕР№РєРё Р°РєРєР°СѓРЅС‚Р°...", "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ\nР—Р°Р±С‹Р» РЅРёРєРЅРµР№Рј\nР’С‹Р№С‚Рё", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
+	            SendClientMessage(playerid, COLOR_TOMATO, "Этот аккаунт не зарегистрирован. Попробуйте нажать на 'Забыл пароль'");
+	        	Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "Настройки аккаунта...", "Забыл пароль\nЗабыл никнейм\nВыйти", "Выбрать", "Назад");
 	        	return 1;
 	        }
 
 			new string[64 + MAX_SECURITY_QUESTION_SIZE];
-			format(string, sizeof(string), COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РѕС‚РІРµС‚ РЅР° СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ, С‡С‚РѕР±С‹ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РїР°СЂРѕР»СЊ.\n\n"COL_TOMATO"%s", eUser[playerid][e_USER_SECURITY_QUESTION]);
-			Dialog_Show(playerid, FORGOT_PASSWORD, DIALOG_STYLE_INPUT, "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ:", string, "Р”Р°Р»РµРµ", "РћС‚РјРµРЅР°");
+			format(string, sizeof(string), COL_WHITE "Введите ваш ответ на секретный вопрос, чтобы восстановить пароль.\n\n"COL_TOMATO"%s", eUser[playerid][e_USER_SECURITY_QUESTION]);
+			Dialog_Show(playerid, FORGOT_PASSWORD, DIALOG_STYLE_INPUT, "Забыл пароль:", string, "Далее", "Отмена");
 	    }
 	    case 1:
 	    {
@@ -1534,8 +1534,8 @@ Dialog:OPTIONS(playerid, response, listitem, inputtext[])
 			new DBResult:result = db_query(db, string);
 			if (db_num_rows(result) == 0)
 			{
-			    SendClientMessage(playerid, COLOR_TOMATO, "РќРµ РЅР°Р№РґРµРЅ РїРµСЂРІС‹Р№ IP-Р»РѕРіРёРЅ. РљР°Р¶РµС‚СЃСЏ, РІС‹ Р·Р°С…РѕРґРёС‚Рµ РІРїРµСЂРІС‹Рµ!");
-		     	Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "РќР°СЃС‚СЂРѕР№РєРё Р°РєРєР°СѓРЅС‚Р°...", "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ\nР—Р°Р±С‹Р» РЅРёРєРЅРµР№Рј\nР’С‹Р№С‚Рё", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
+			    SendClientMessage(playerid, COLOR_TOMATO, "Не найден первый IP-логин. Кажется, вы заходите впервые!");
+		     	Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "Настройки аккаунта...", "Забыл пароль\nЗабыл никнейм\nВыйти", "Выбрать", "Назад");
 			    return 1;
 			}
 
@@ -1549,12 +1549,12 @@ Dialog:OPTIONS(playerid, response, listitem, inputtext[])
 			{
 			    db_get_field_assoc(result, "name", name, MAX_PLAYER_NAME);
 				lastlogin_timestamp = db_get_field_assoc_int(result, "lastlogin_timestamp");
-			    format(list, sizeof(list), "%s"COL_TOMATO"%s "COL_WHITE"|| РџРѕСЃР»РµРґРЅРёР№ Р»РѕРіРёРЅ: %s РЅР°Р·Р°Рґ\n", list, name, ReturnTimelapse(lastlogin_timestamp, gettime()));
+			    format(list, sizeof(list), "%s"COL_TOMATO"%s "COL_WHITE"|| Последний логин: %s назад\n", list, name, ReturnTimelapse(lastlogin_timestamp, gettime()));
 			}
 			while (db_next_row(result) && i > j);
 			db_free_result(result);
 
-			Dialog_Show(playerid, FORGOT_USERNAME, DIALOG_STYLE_LIST, "Р’Р°С€Р° РёСЃС‚РѕСЂРёСЏ РЅРёРєРЅРµР№РјРѕРІ...", list, "Ok", "");
+			Dialog_Show(playerid, FORGOT_USERNAME, DIALOG_STYLE_LIST, "Ваша история никнеймов...", list, "Ok", "");
 			PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 	    }
 	    case 2:
@@ -1569,7 +1569,7 @@ Dialog:FORGOT_PASSWORD(playerid, response, listitem, inputtext[])
 {
 	if (!response)
 	{
-	    Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "РќР°СЃС‚СЂРѕР№РєРё Р°РєРєР°СѓРЅС‚Р°...", "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ\nР—Р°Р±С‹Р» РЅРёРєРЅРµР№Рј\nР’С‹Р№С‚Рё", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
+	    Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "Настройки аккаунта...", "Забыл пароль\nЗабыл никнейм\nВыйти", "Выбрать", "Назад");
 	    return 1;
 	}
 
@@ -1586,21 +1586,21 @@ Dialog:FORGOT_PASSWORD(playerid, response, listitem, inputtext[])
             format(string, sizeof(string), "INSERT INTO `temp_blocked_users` VALUES('%s', %i, %i)", ip, lock_timestamp, eUser[playerid][e_USER_SQLID]);
 			db_query(db, string);
 
-		    SendClientMessage(playerid, COLOR_TOMATO, "РР·РІРёРЅРёС‚Рµ СЌС‚РѕС‚ Р°РєРєР°СѓРЅС‚Р° РІСЂРµРјРµРЅРЅРѕ Р·Р°Р±Р°РЅРµРЅ. РСЃРїРѕР»СЊР·РѕРІР°РЅРѕ "#MAX_LOGIN_ATTEMPTS"/"#MAX_LOGIN_ATTEMPTS" РїРѕРїС‹С‚РѕРє.");
+		    SendClientMessage(playerid, COLOR_TOMATO, "Извините этот аккаунта временно забанен. Использовано "#MAX_LOGIN_ATTEMPTS"/"#MAX_LOGIN_ATTEMPTS" попыток.");
 		    format(string, sizeof(string), "If you forgot your password/username, click on 'Options' in login window next time (you may retry in %s).", ReturnTimelapse(gettime(), lock_timestamp));
 			SendClientMessage(playerid, COLOR_TOMATO, string);
 		    return Kick(playerid);
 		}
 
-	    format(string, sizeof(string), COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РѕС‚РІРµС‚ РЅР° СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ, С‡С‚РѕР±С‹ СЃР±СЂРѕСЃРёС‚СЊ РїР°СЂРѕР»СЊ.\n\n"COL_TOMATO"%s", eUser[playerid][e_USER_SECURITY_QUESTION]);
-		Dialog_Show(playerid, FORGOT_PASSWORD, DIALOG_STYLE_INPUT, "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ:", string, "Р”Р°Р»РµРµ", "РћС‚РјРµРЅР°");
-		format(string, sizeof(string), "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РѕС‚РІРµС‚. РћСЃС‚Р°Р»РѕСЃСЊ: %i/"#MAX_LOGIN_ATTEMPTS" РїРѕРїС‹С‚РѕРє.", iAnswerAttempts[playerid]);
+	    format(string, sizeof(string), COL_WHITE "Введите ваш ответ на секретный вопрос, чтобы сбросить пароль.\n\n"COL_TOMATO"%s", eUser[playerid][e_USER_SECURITY_QUESTION]);
+		Dialog_Show(playerid, FORGOT_PASSWORD, DIALOG_STYLE_INPUT, "Забыл пароль:", string, "Далее", "Отмена");
+		format(string, sizeof(string), "Неправильный ответ. Осталось: %i/"#MAX_LOGIN_ATTEMPTS" попыток.", iAnswerAttempts[playerid]);
 		SendClientMessage(playerid, COLOR_TOMATO, string);
 	    return 1;
 	}
 
-	Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ:", COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ.", "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "");
-	SendClientMessage(playerid, COLOR_GREEN, "РЈСЃРїРµС€РЅРѕ РІРІРµР»Рё РѕС‚РІРµС‚. РўРµРїРµСЂСЊ РІРІРµРґРёС‚Рµ РІР°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ");
+	Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "Восстановление пароля:", COL_WHITE "Введите ваш новый пароль.", "Подтвердить", "");
+	SendClientMessage(playerid, COLOR_GREEN, "Успешно ввели ответ. Теперь введите ваш новый пароль");
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	return 1;
 }
@@ -1609,7 +1609,7 @@ Dialog:RESET_PASSWORD(playerid, response, listitem, inputtext[])
 {
 	if (!response)
 	{
-		Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "РР·РјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ:", COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ.", "РџРѕРґС‚РІРµСЂРёРґС‚СЊ", "");
+		Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "Изменить пароль:", COL_WHITE "Введите ваш новый пароль.", "Подтверидть", "");
 		return 1;
 	}
 
@@ -1617,8 +1617,8 @@ Dialog:RESET_PASSWORD(playerid, response, listitem, inputtext[])
 
 	if (!(MIN_PASSWORD_LENGTH <= strlen(inputtext) <= MAX_PASSWORD_LENGTH))
 	{
-	    Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "РР·РјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ:", COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ", "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "");
-		SendClientMessage(playerid, COLOR_TOMATO, "РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ "#MIN_PASSWORD_LENGTH" - "#MAX_PASSWORD_LENGTH" СЃРёРјРІРѕР»РѕРІ.");
+	    Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "Изменить пароль:", COL_WHITE "Введите ваш новый пароль", "Подтвердить", "");
+		SendClientMessage(playerid, COLOR_TOMATO, "Пароль должен иметь "#MIN_PASSWORD_LENGTH" - "#MAX_PASSWORD_LENGTH" символов.");
 	    return 1;
 	}
 
@@ -1644,8 +1644,8 @@ Dialog:RESET_PASSWORD(playerid, response, listitem, inputtext[])
 
 		if (!contain_number || !contain_highercase || !contain_lowercase)
 		{
-		    Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "РР·РјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ:", COL_WHITE "Р’РІРµРґРёС‚Рµ РІР°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ", "РџРѕРґС‚РІРµСЂРёРґС‚СЊ", "");
-			SendClientMessage(playerid, COLOR_TOMATO, "РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· Р±СѓРєРІ Рё С†РёС„СЂ.");
+		    Dialog_Show(playerid, RESET_PASSWORD, DIALOG_STYLE_PASSWORD, "Изменить пароль:", COL_WHITE "Введите ваш новый пароль", "Подтверидть", "");
+			SendClientMessage(playerid, COLOR_TOMATO, "Пароль должен состоять из букв и цифр.");
 		    return 1;
 		}
 	#endif
@@ -1659,7 +1659,7 @@ Dialog:RESET_PASSWORD(playerid, response, listitem, inputtext[])
 	format(string, sizeof(string), "UPDATE `users` SET `password` = '%q', `ip` = '%s', `longip` = %i, `lastlogin_timestamp` = %i WHERE `id` = %i", eUser[playerid][e_USER_PASSWORD], ip, IpToLong(ip), gettime(), eUser[playerid][e_USER_SQLID]);
 	db_query(db, string);
 
-	format(string, sizeof(string), "РЈСЃРїРµС€РЅРѕ Р°РІС‚РѕСЂРёР·РѕРІР°РЅС‹ СЃ РЅРѕРІС‹Рј РїР°СЂРѕР»РµРј! %s. [РџРѕСЃР»РµРґРЅРёР№ Р»РѕРіРёРЅ: %s РЅР°Р·Р°Рґ]", name, ReturnTimelapse(eUser[playerid][e_USER_LASTLOGIN_TIMESTAMP], gettime()));
+	format(string, sizeof(string), "Успешно авторизованы с новым паролем! %s. [Последний логин: %s назад]", name, ReturnTimelapse(eUser[playerid][e_USER_LASTLOGIN_TIMESTAMP], gettime()));
 	SendClientMessage(playerid, COLOR_GREEN, string);
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	SetPVarInt(playerid, "LoggedIn", 1);
@@ -1669,36 +1669,36 @@ Dialog:RESET_PASSWORD(playerid, response, listitem, inputtext[])
 
 Dialog:FORGOT_USERNAME(playerid, response, listitem, inputtext[])
 {
-	Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "РќР°СЃС‚СЂРѕР№РєРё Р°РєРєР°СѓРЅС‚Р°...", "Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ\nР—Р°Р±С‹Р» РЅРёРєРЅРµР№Рј\nР’С‹Р№С‚Рё", "Р’С‹Р±СЂР°С‚СЊ", "РќР°Р·Р°Рґ");
+	Dialog_Show(playerid, OPTIONS, DIALOG_STYLE_LIST, "Настройки аккаунта...", "Забыл пароль\nЗабыл никнейм\nВыйти", "Выбрать", "Назад");
 	return 1;
 }
 
 CMD:randomchangearena(playerid, params[])
 {
-	if(eUser[playerid][e_USER_ADMIN_LEVEL] < 2) return SendClientMessage(playerid, -1, "РЈ РІР°СЃ РЅРµС‚ РїСЂР°РІ");
+	if(eUser[playerid][e_USER_ADMIN_LEVEL] < 2) return SendClientMessage(playerid, -1, "У вас нет прав");
 	ZoneNumberStopFlashForAll(arena);
 	arena = random(MAX_ZONES);
 	PrepareChangeArena();
-	va_SendClientMessage(playerid, -1, "РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ ", arena);
+	va_SendClientMessage(playerid, -1, "Администратор ", arena);
 	return 1;
 }
 
 CMD:changearena(playerid, params[])
 {
-	if(eUser[playerid][e_USER_ADMIN_LEVEL] < 2) return SendClientMessage(playerid, -1, "РЈ РІР°СЃ РЅРµС‚ РїСЂР°РІ");
+	if(eUser[playerid][e_USER_ADMIN_LEVEL] < 2) return SendClientMessage(playerid, -1, "У вас нет прав");
 	new arenaid = strval(params);
 	ZoneNumberStopFlashForAll(arena);
 	arena = arenaid;
 	PrepareChangeArena();
-	va_SendClientMessage(playerid, -1, "РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ СЃРјРµРЅРёР» Р°СЂРµРЅСѓ РЅР° ID: "COL_DEFAULT"%d", arena);
+	va_SendClientMessage(playerid, -1, "Администратор сменил арену на ID: "COL_DEFAULT"%d", arena);
 	return 1;
 }
 
 CMD:rtv(playerid, params[])
 {
-	if(connect < 3) return SendClientMessage(playerid, -1, "РќР° СЃРµСЂРІРµСЂ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµ РјРµРЅСЊС€Рµ С‚СЂС‘С… РёРіСЂРѕРєРѕРІ");
+	if(connect < 3) return SendClientMessage(playerid, -1, "На сервер должно быть не меньше трёх игроков");
 	rtvs++;
-	va_SendClientMessageToAll(-1, "%s РіРѕР»РѕСЃСѓРµС‚ Р·Р° СЃРјРµРЅСѓ РєР°СЂС‚С‹! (%d РёР· %d)", eUser[playerid][Name], rtvs, connect);
+	va_SendClientMessageToAll(-1, "%s голосует за смену карты! (%d из %d)", eUser[playerid][Name], rtvs, connect);
 	return 1;
 }
 
@@ -1706,12 +1706,12 @@ CMD:changepass(playerid, params[])
 {
 	if (eUser[playerid][e_USER_SQLID] != 1)
 	{
-		SendClientMessage(playerid, COLOR_TOMATO, "РўРѕР»СЊРєРѕ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅС‹Рµ РјРѕРіСѓС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРјР°РЅРґС‹.");
+		SendClientMessage(playerid, COLOR_TOMATO, "Только авторизованные могут использовать команды.");
 		return 1;
 	}
 
-    Dialog_Show(playerid, CHANGE_PASSWORD, DIALOG_STYLE_PASSWORD, "РР·РјРµРЅРµРЅРёРµ РїР°СЂРѕР»СЏ...", COL_WHITE "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ"COL_WHITE".", "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РћС‚РјРµРЅР°");
-	SendClientMessage(playerid, COLOR_WHITE, "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ.");
+    Dialog_Show(playerid, CHANGE_PASSWORD, DIALOG_STYLE_PASSWORD, "Изменение пароля...", COL_WHITE "Введите новый пароль"COL_WHITE".", "Подтвердить", "Отмена");
+	SendClientMessage(playerid, COLOR_WHITE, "Введите новый пароль.");
 	PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 	return 1;
 }
@@ -1723,8 +1723,8 @@ Dialog:CHANGE_PASSWORD(playerid, response, listitem, inputtext[])
 
 	if (!(MIN_PASSWORD_LENGTH <= strlen(inputtext) <= MAX_PASSWORD_LENGTH))
 	{
-	    Dialog_Show(playerid, CHANGE_PASSWORD, DIALOG_STYLE_PASSWORD, "РР·РјРµРЅРµРЅРёРµ РїР°СЂРѕР»СЏ РѕС‚ Р°РєРєР°СѓРЅС‚Р°...", COL_WHITE "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ.", "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РћС‚РјРµРЅР°");
-		SendClientMessage(playerid, COLOR_TOMATO, "РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ "#MIN_PASSWORD_LENGTH" - "#MAX_PASSWORD_LENGTH" СЃРёРјРІРѕР»РѕРІ.");
+	    Dialog_Show(playerid, CHANGE_PASSWORD, DIALOG_STYLE_PASSWORD, "Изменение пароля от аккаунта...", COL_WHITE "Введите новый пароль.", "Подтвердить", "Отмена");
+		SendClientMessage(playerid, COLOR_TOMATO, "Пароль должен иметь "#MIN_PASSWORD_LENGTH" - "#MAX_PASSWORD_LENGTH" символов.");
 	    return 1;
 	}
 
@@ -1750,8 +1750,8 @@ Dialog:CHANGE_PASSWORD(playerid, response, listitem, inputtext[])
 
 		if (!contain_number || !contain_highercase || !contain_lowercase)
 		{
-		    Dialog_Show(playerid, CHANGE_PASSWORD, DIALOG_STYLE_INPUT, "РР·РјРµРЅРµРЅРёРµ РїР°СЂРѕР»СЏ РѕС‚ Р°РєРєР°СѓРЅС‚Р°...", COL_WHITE "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ.", "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РћС‚РјРµРЅР°");
-			SendClientMessage(playerid, COLOR_TOMATO, "РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· Р±СѓРєРІ Рё С†РёС„СЂ.");
+		    Dialog_Show(playerid, CHANGE_PASSWORD, DIALOG_STYLE_INPUT, "Изменение пароля от аккаунта...", COL_WHITE "Введите новый пароль.", "Подтвердить", "Отмена");
+			SendClientMessage(playerid, COLOR_TOMATO, "Пароль должен состоять из букв и цифр.");
 		    return 1;
 		}
 	#endif
@@ -1763,7 +1763,7 @@ Dialog:CHANGE_PASSWORD(playerid, response, listitem, inputtext[])
 	{
 	    inputtext[i] = '*';
 	}
-	format(string, sizeof(string), "РџР°СЂРѕР»СЊ СѓСЃРїРµС€РЅРѕ РёР·РјРµРЅС‘РЅ! [P: %s]", inputtext);
+	format(string, sizeof(string), "Пароль успешно изменён! [P: %s]", inputtext);
 	SendClientMessage(playerid, COLOR_GREEN, string);
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	return 1;
@@ -1773,7 +1773,7 @@ CMD:changeques(playerid, params[])
 {
 	if (eUser[playerid][e_USER_SQLID] != 1)
 	{
-		SendClientMessage(playerid, COLOR_TOMATO, "РўРѕР»СЊРєРѕ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅС‹Рµ РјРѕРіСѓС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРјР°РЅРґС‹.");
+		SendClientMessage(playerid, COLOR_TOMATO, "Только авторизованные могут использовать команды.");
 		return 1;
 	}
 
@@ -1783,8 +1783,8 @@ CMD:changeques(playerid, params[])
 	    strcat(list, SECURITY_QUESTIONS[i]);
 	    strcat(list, "\n");
 	}
-	Dialog_Show(playerid, CHANGE_SEC_QUESTION, DIALOG_STYLE_LIST, "РР·РјРµРЅРµРЅРёРµ СЃРµРєСЂРµС‚РЅРѕРіРѕ РІРѕРїСЂРѕСЃР°... [РЁР°Рі: 1/2]", list, "Р”Р°Р»РµРµ", "РћС‚РјРµРЅР°");
-	SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 1/2] Р’С‹Р±РµСЂРёС‚Рµ СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ!");
+	Dialog_Show(playerid, CHANGE_SEC_QUESTION, DIALOG_STYLE_LIST, "Изменение секретного вопроса... [Шаг: 1/2]", list, "Далее", "Отмена");
+	SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 1/2] Выберите секретный вопрос!");
 	PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 	return 1;
 }
@@ -1797,9 +1797,9 @@ Dialog:CHANGE_SEC_QUESTION(playerid, response, listitem, inputext[])
 	SetPVarInt(playerid, "Question", listitem);
 
 	new string[256];
-	format(string, sizeof(string), COL_YELLOW "%s\n"COL_WHITE"Р’РІРµРґРёС‚Рµ РІР°С€ РѕС‚РІРµС‚.", SECURITY_QUESTIONS[listitem]);
-	Dialog_Show(playerid, CHANGE_SEC_ANSWER, DIALOG_STYLE_INPUT, "РР·РјРµРЅРµРЅРёРµ СЃРµРєСЂРµС‚РЅРѕРіРѕ РІРѕРїСЂРѕСЃР°... [РЁР°Рі: 2/2]", string, "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РћС‚РјРµРЅР°");
-	SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 2/2] Write the answer to your secuirty question.");
+	format(string, sizeof(string), COL_YELLOW "%s\n"COL_WHITE"Введите ваш ответ.", SECURITY_QUESTIONS[listitem]);
+	Dialog_Show(playerid, CHANGE_SEC_ANSWER, DIALOG_STYLE_INPUT, "Изменение секретного вопроса... [Шаг: 2/2]", string, "Подтвердить", "Отмена");
+	SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 2/2] Write the answer to your secuirty question.");
 	PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 	return 1;
 }
@@ -1814,8 +1814,8 @@ Dialog:CHANGE_SEC_ANSWER(playerid, response, listitem, inputtext[])
 		    strcat(list, SECURITY_QUESTIONS[i]);
 		    strcat(list, "\n");
 		}
-		Dialog_Show(playerid, CHANGE_SEC_QUESTION, DIALOG_STYLE_LIST, "РР·РјРµРЅРµРЅРёРµ СЃРµРєСЂРµС‚РЅРѕРіРѕ РІРѕРїСЂРѕСЃР°... [РЁР°Рі: 1/2]", list, "Р”Р°Р»РµРµ", "РћС‚РјРµРЅР°");
-		SendClientMessage(playerid, COLOR_WHITE, "[РЁР°Рі: 1/2] Р’С‹Р±РµСЂРёС‚Рµ СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ!");
+		Dialog_Show(playerid, CHANGE_SEC_QUESTION, DIALOG_STYLE_LIST, "Изменение секретного вопроса... [Шаг: 1/2]", list, "Далее", "Отмена");
+		SendClientMessage(playerid, COLOR_WHITE, "[Шаг: 1/2] Выберите секретный вопрос!");
 		return 1;
 	}
 
@@ -1823,9 +1823,9 @@ Dialog:CHANGE_SEC_ANSWER(playerid, response, listitem, inputtext[])
 
 	if (strlen(inputtext) < MIN_PASSWORD_LENGTH || inputtext[0] == ' ')
 	{
-	    format(string, sizeof(string), COL_YELLOW "%s\n"COL_WHITE"Р’РІРµРґРёС‚Рµ РѕС‚РІРµС‚ РЅР° СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ.", SECURITY_QUESTIONS[listitem]);
-		Dialog_Show(playerid, CHANGE_SEC_ANSWER, DIALOG_STYLE_INPUT, "РР·РјРµРЅРµРЅРёРµ СЃРµРєСЂРµС‚РЅРѕРіРѕ РІРѕРїСЂРѕСЃР°... [РЁР°Рі: 2/2]", string, "РџРѕРґС‚РІРµСЂРґРёС‚СЊ", "РћС‚РјРµРЅР°");
-		SendClientMessage(playerid, COLOR_TOMATO, "РћС‚РІРµС‚ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РјРёРЅРёРјСѓРј РёР· "#MIN_PASSWORD_LENGTH" СЃРёРјРІРѕР»РѕРІ.");
+	    format(string, sizeof(string), COL_YELLOW "%s\n"COL_WHITE"Введите ответ на секретный вопрос.", SECURITY_QUESTIONS[listitem]);
+		Dialog_Show(playerid, CHANGE_SEC_ANSWER, DIALOG_STYLE_INPUT, "Изменение секретного вопроса... [Шаг: 2/2]", string, "Подтвердить", "Отмена");
+		SendClientMessage(playerid, COLOR_TOMATO, "Ответ должен состоять минимум из "#MIN_PASSWORD_LENGTH" символов.");
 		return 1;
 	}
 
@@ -1837,7 +1837,7 @@ Dialog:CHANGE_SEC_ANSWER(playerid, response, listitem, inputtext[])
         inputtext[i] = tolower(inputtext[i]);
 	}
 	SHA256_PassHash(inputtext, eUser[playerid][e_USER_SALT], eUser[playerid][e_USER_SECURITY_ANSWER], 64);
-	format(string, sizeof(string), "РћС‚РІРµС‚ РЅР° СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ СѓСЃРїРµС€РЅРѕ РёР·РјРµРЅС‘РЅ! [Q: %s].", eUser[playerid][e_USER_SECURITY_QUESTION]);
+	format(string, sizeof(string), "Ответ на секретный вопрос успешно изменён! [Q: %s].", eUser[playerid][e_USER_SECURITY_QUESTION]);
 	SendClientMessage(playerid, COLOR_GREEN, string);
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	return 1;
@@ -1849,18 +1849,18 @@ CMD:stats(playerid, params[])
 	if (sscanf(params, "u", targetid))
 	{
   		targetid = playerid;
-		SendClientMessage(playerid, COLOR_DEFAULT, "Tip: РСЃРїРѕР»СЊР·СѓР№С‚Рµ /stats [player id]");
+		SendClientMessage(playerid, COLOR_DEFAULT, "Tip: Используйте /stats [player id]");
 	}
 
 	if (!IsPlayerConnected(targetid))
-		return SendClientMessage(playerid, COLOR_TOMATO, "РРіСЂРѕРє РЅРµ РїРѕРґРєР»СЋС‡РµРЅ.");
+		return SendClientMessage(playerid, COLOR_TOMATO, "Игрок не подключен.");
 
 	new name[MAX_PLAYER_NAME];
 	GetPlayerName(targetid, name, MAX_PLAYER_NAME);
 
 	SendClientMessage(playerid, -1, "_______________________________________________");
 	SendClientMessage(playerid, -1, "");
-	va_SendClientMessage(playerid, -1, "{00ff00}%s[%i] {FFFFFF}СЃС‚Р°С‚РёСЃС‚РёРєР°: (AccountId: %i)", name, targetid, eUser[targetid][e_USER_SQLID]);
+	va_SendClientMessage(playerid, -1, "{00ff00}%s[%i] {FFFFFF}статистика: (AccountId: %i)", name, targetid, eUser[targetid][e_USER_SQLID]);
 
 	new Float:ratio = ((eUser[targetid][e_USER_DEATHS] < 0) ? (0.0) : (floatdiv(eUser[targetid][e_USER_KILLS], eUser[targetid][e_USER_DEATHS])));
 
@@ -1877,16 +1877,16 @@ CMD:stats(playerid, params[])
 
 	static gangname[15];
 	if(eUser[targetid][GangId] == 0){
-		gangname = "РќРµС‚ Р±Р°РЅРґС‹";
+		gangname = "Нет банды";
 	}else{
 		format(gangname, 15, GangsNew[eUser[targetid][GangId]-1][Tag]);
 	}
 
-	va_SendClientMessage(playerid, -1, "Exp: %i || РЈР±РёР№СЃС‚РІ: %i || РЎРјРµСЂС‚РµР№: %i || Ratio: %0.2f || РђРґРјРёРЅ СѓСЂРѕРІРµРЅСЊ: %i - %s || Vip СѓСЂРѕРІРµРЅСЊ: %i",
+	va_SendClientMessage(playerid, -1, "Exp: %i || Убийств: %i || Смертей: %i || Ratio: %0.2f || Админ уровень: %i - %s || Vip уровень: %i",
 		GetPlayerScore(targetid), eUser[targetid][e_USER_KILLS], eUser[targetid][e_USER_DEATHS], ratio, eUser[targetid][e_USER_ADMIN_LEVEL], levelname[((eUser[targetid][e_USER_ADMIN_LEVEL] > 5) ? (5) : (eUser[targetid][e_USER_ADMIN_LEVEL]))], eUser[targetid][e_USER_VIP_LEVEL]);
-	va_SendClientMessage(playerid, -1, "Р’С‹РёРіСЂР°РЅРѕ РґСѓРµР»РµР№: %i || РџСЂРѕРёРіСЂР°РЅРѕ РґСѓРµР»РµР№: %i || Р‘Р°РЅРґР°: %s", eUser[targetid][DuelWon], eUser[targetid][DuelLose], gangname);
+	va_SendClientMessage(playerid, -1, "Выиграно дуелей: %i || Проиграно дуелей: %i || Банда: %s", eUser[targetid][DuelWon], eUser[targetid][DuelLose], gangname);
 
-	va_SendClientMessage(playerid, -1, "{FFFFFF}Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°Р»СЃСЏ: "COL_RED"%s РЅР°Р·Р°Рґ {FFFFFF}|| РџРѕСЃР»РµРґРЅРёР№ Р»РѕРіРёРЅ: "COL_RED"%s РЅР°Р·Р°Рґ",
+	va_SendClientMessage(playerid, -1, "{FFFFFF}Зарегистрировался: "COL_RED"%s назад {FFFFFF}|| Последний логин: "COL_RED"%s назад",
 	 	ReturnTimelapse(eUser[playerid][e_USER_REGISTER_TIMESTAMP], gettime()), ReturnTimelapse(eUser[playerid][e_USER_LASTLOGIN_TIMESTAMP], gettime()));
 
 	SendClientMessage(playerid, -1, "");
@@ -1902,39 +1902,39 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source){
 }
 
 CMD:help(playerid, params[]){
-	Dialog_Show(playerid, DIALOG_HELP, DIALOG_STYLE_MSGBOX, "{FFFFFF}РџРѕРјРѕС‰СЊ", ""COL_DEFAULT"- /credits {FFFFFF}- СѓР·РЅР°С‚СЊ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ.\n"COL_DEFAULT"- /cmds {FFFFFF}- РєРѕРјР°РЅРґС‹ СЃРµСЂРІРµСЂР°\n"COL_DEFAULT"- sa-gdm.ru {FFFFFF}- СЃР°Р№С‚", "Ok", "РћС‚РјРµРЅР°");	
+	Dialog_Show(playerid, DIALOG_HELP, DIALOG_STYLE_MSGBOX, "{FFFFFF}Помощь", ""COL_DEFAULT"- /credits {FFFFFF}- узнать разработчиков.\n"COL_DEFAULT"- /cmds {FFFFFF}- команды сервера\n"COL_DEFAULT"- sa-gdm.ru {FFFFFF}- сайт", "Ok", "Отмена");	
 	return true;
 }
 
 CMD:credits(playerid, params[]){
-	Dialog_Show(playerid, DIALOG_HELP, DIALOG_STYLE_MSGBOX, ""COL_DEFAULT"РљСЂРµРґРёС‚С‹", "{FFFFFF}РџРёСЃР°Р» РІСЃС‘, РІСЃС‘, РєСЂРѕРјРµ РѕСЃРЅРѕРІС‹ - ShimaNeko\nРўРµРєСЃС‚РґСЂР°РІС‹ - ShimaNeko\nРђСЂРµРЅС‹ - ShimaNeko, Renzo, Sowngarde, FroG\nРћСЃРЅРѕРІР° reg/log РѕС‚ Gammix'a\nРњРѕРё РєРѕРЅС‚Р°РєС‚С‹\nvk: vk.com/shimaneko РёР»Рё discord: ShimaNeko#6885\n\nРђРєРєР°СѓРЅС‚С‹ РЅР° SQLite, weapon-config РѕС‚ Slice'a", "Ok", "РћС‚РјРµРЅР°");
+	Dialog_Show(playerid, DIALOG_HELP, DIALOG_STYLE_MSGBOX, ""COL_DEFAULT"Кредиты", "{FFFFFF}Писал всё, всё, кроме основы - ShimaNeko\nТекстдравы - ShimaNeko\nАрены - ShimaNeko, Renzo, Sowngarde, FroG\nОснова reg/log от Gammix'a\nМои контакты\nvk: vk.com/shimaneko или discord: ShimaNeko#6885\n\nАккаунты на SQLite, weapon-config от Slice'a", "Ok", "Отмена");
 	return true;
 }
 
 CMD:cmds(playerid, params[]){
-	Dialog_Show(playerid, DIALOG_COMMANDS, DIALOG_STYLE_MSGBOX, "{FFFFFF}РљРѕРјР°РЅРґС‹ [1 РёР· No-one]", ""COL_DEFAULT"/stats - СЃС‚Р°С‚РёСЃС‚РёРєР°\n/changeskin - РёР·РјРµРЅРёС‚СЊ СЃРєРёРЅ\n/afk - СѓР№С‚Рё РІ Р°С„Рє/РІРµСЂРЅСѓС‚СЊСЃСЏ\n/weather - РёР·РјРµРЅРёС‚СЊ РїРѕРіРѕРґСѓ\n/time - РёР·РјРµРЅРёС‚СЊ РІСЂРµРјСЏ\n/changeques - РёР·РјРµРЅРёС‚СЊ СЃРµРєСЂРµС‚РЅС‹Р№ РІРѕРїСЂРѕСЃ\n\
-		/changepass - РёР·РјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ\n/duel - СЃРѕРѕР±С‰РёС‚СЊ Рѕ РґСѓРµР»Рµ РІ С‡Р°С‚\n/respawn - СЃРґРµР»Р°С‚СЊ СЂРµСЃРїР°РІРЅ\n/ghelp - РєРѕРјР°РЅРґС‹ РґР»СЏ Р±Р°РЅРґ\n/changepack - РёР·РјРµРЅРёС‚СЊ РїР°Рє", "Ok", "РћС‚РјРµРЅР°");
+	Dialog_Show(playerid, DIALOG_COMMANDS, DIALOG_STYLE_MSGBOX, "{FFFFFF}Команды [1 из No-one]", ""COL_DEFAULT"/stats - статистика\n/changeskin - изменить скин\n/afk - уйти в афк/вернуться\n/weather - изменить погоду\n/time - изменить время\n/changeques - изменить секретный вопрос\n\
+		/changepass - изменить пароль\n/duel - сообщить о дуеле в чат\n/respawn - сделать респавн\n/ghelp - команды для банд\n/changepack - изменить пак", "Ok", "Отмена");
 	return true;
 }
 
 CMD:ghelp(playerid, params[]){
-	Dialog_Show(playerid, DIALOG_GCOMMANDS, DIALOG_STYLE_MSGBOX, "{FFFFFF}РљРѕРјР°РЅРґС‹ РґР»СЏ Р±Р°РЅРґ", ""COL_DEFAULT"/gangcreate - СЃРѕР·РґР°С‚СЊ Р±Р°РЅРґСѓ\n/gangjoin - РїРѕРґР°С‚СЊ Р·Р°СЏРІРєСѓ\n/leave - РІС‹Р№С‚Рё РёР· Р±Р°РЅРґС‹\n/ginfo - СѓР·РЅР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ Р±Р°РЅРґ\n/gangtop - СѓР·РЅР°С‚СЊ РўРћРџ-10 Р±Р°РЅРґ", "Ok", "РћС‚РјРµРЅР°");
+	Dialog_Show(playerid, DIALOG_GCOMMANDS, DIALOG_STYLE_MSGBOX, "{FFFFFF}Команды для банд", ""COL_DEFAULT"/gangcreate - создать банду\n/gangjoin - подать заявку\n/leave - выйти из банды\n/ginfo - узнать информацию о банд\n/gangtop - узнать ТОП-10 банд", "Ok", "Отмена");
 	return true;
 }
 
-// СЃРґРµР»Р°С‚СЊ РїРѕРєР°Р· Р» РІ РґСѓРµР»РµР№ РІ СЃС‚Р°С‚Рµ
-// РїРѕ РєР»РёРєСѓ СЃРјРѕС‚СЂРµС‚СЊ СЃС‚Р°С‚Сѓ РёРіСЂРѕРєР° Рё РґРѕРїРѕР»РЅРёС‚СЊ РµРµ
-// СѓРєСЂР°СЃРёС‚СЊ С‚РµРµСЃС‚
+// сделать показ л в дуелей в стате
+// по клику смотреть стату игрока и дополнить ее
+// украсить теест
 CMD:changeskin(playerid, params[]){
     new skinid = strval(params);
-    if(isnull(params)) return SendClientMessage(playerid, -1, ""COL_BLACK"РСЃРїРѕР»СЊР·СѓР№С‚Рµ: /changeskin [ID].");
-	if(!IsNumeric(params)) return SendClientMessage(playerid,-1,""COL_DEFAULT"[РћРЁРР‘РљРђ] "COL_WHITE"Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ."); 
+    if(isnull(params)) return SendClientMessage(playerid, -1, ""COL_BLACK"Используйте: /changeskin [ID].");
+	if(!IsNumeric(params)) return SendClientMessage(playerid,-1,""COL_DEFAULT"[ОШИБКА] "COL_WHITE"Введите число."); 
     //if raz proverka
     // if dva proverka
     if(skinid < 1 || skinid > 300) return true;
     SetPlayerSkin(playerid, skinid);
     SetPVarInt(playerid, "PlayerSkin", skinid);
-    // РІС‹РІРѕРґРёРј РґРёР°Р»РѕРі Рѕ С‚РѕРј, С…РѕС‡РµС‚ Р»Рё РёРіСЂРѕРє СЃРѕС…СЂР°РЅРёС‚СЊ СЃРІРѕР№ СЃРєРёРЅ Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РµРіРѕ РІ РґР°Р»СЊРЅРµР№С€РµРј
+    // выводим диалог о том, хочет ли игрок сохранить свой скин и использовать его в дальнейшем
 
     return true;
 }
@@ -1944,8 +1944,8 @@ CMD:changeskin(playerid, params[]){
 CMD:changepack(playerid, params[]){
 	new Float:Armour;
 	GetPlayerArmour(playerid, Armour);
-	if(Armour < 20.0) return SendClientMessage(playerid, -1, "Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ СѓР№С‚Рё РІ Р°С„Рє.");	
-	Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "РЎРїР°РІРЅ");
+	if(Armour < 20.0) return SendClientMessage(playerid, -1, "Вы не можете уйти в афк.");	
+	Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Спавн");
 	SetPlayerVirtualWorld(playerid, 15);
     return true;
 }
@@ -1953,16 +1953,16 @@ CMD:changepack(playerid, params[]){
 CMD:afk(playerid, params[]){
 	new Float:Armour;
 	GetPlayerArmour(playerid, Armour);
-	if(Armour < 20.0) return SendClientMessage(playerid, -1, "Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ СѓР№С‚Рё РІ Р°С„Рє.");	
+	if(Armour < 20.0) return SendClientMessage(playerid, -1, "Вы не можете уйти в афк.");	
     if(GetPVarInt(playerid, "onafk") == 0){
-       SendClientMessage(playerid, -1, ""COL_RED"Р’С‹ СЂРµС€РёР»Рё РѕС‚РґРѕС…РЅСѓС‚СЊ. РџРѕРІС‚РѕСЂРЅРѕ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ "COL_WHITE"/afk"COL_RED", С‡С‚РѕР±С‹ РІРµСЂРЅСѓС‚СЃСЏ.");
+       SendClientMessage(playerid, -1, ""COL_RED"Вы решили отдохнуть. Повторно используйте "COL_WHITE"/afk"COL_RED", чтобы вернутся.");
        SetPVarInt(playerid, "onafk", 1);
        SetPlayerPos(playerid, 1361.9303,-15.6455,1000.9219);
        SetPlayerVirtualWorld(playerid, 123);
        SetPlayerInterior(playerid, 1);
        ResetPlayerWeapons(playerid);
     }else{
-       SendClientMessage(playerid, -1, ""COL_RED"РЎ РІРѕР·РІСЂР°С‰РµРЅРёРµРј!");
+       SendClientMessage(playerid, -1, ""COL_RED"С возвращением!");
        SetPVarInt(playerid, "onafk", 0);
        SpawnPlayer(playerid);
        GameTextForPlayer(playerid, "~r~Welcome Back!", 3000, 1);
@@ -1972,15 +1972,15 @@ CMD:afk(playerid, params[]){
 
 CMD:weather(playerid,params[])
 {
-    if(isnull(params)) return SendClientMessage(playerid, -1, ""COL_BLACK"РСЃРїРѕР»СЊР·СѓР№С‚Рµ: /weather [id weather].");
-	if(!IsNumeric(params)) return SendClientMessage(playerid,-1,""COL_DEFAULT"[РћРЁРР‘РљРђ] "COL_WHITE"Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ.");
+    if(isnull(params)) return SendClientMessage(playerid, -1, ""COL_BLACK"Используйте: /weather [id weather].");
+	if(!IsNumeric(params)) return SendClientMessage(playerid,-1,""COL_DEFAULT"[ОШИБКА] "COL_WHITE"Введите число.");
 	
 
 	new myweather;
 	myweather = strval(params);
 
 	SetPlayerWeather(playerid, myweather);
-    va_SendClientMessage(playerid, -1, ""COL_WHITE"РџРѕРіРѕРґР° РёР·РјРµРЅРµРЅР° РЅР° "COL_DEFAULT"%d"COL_WHITE".", myweather);
+    va_SendClientMessage(playerid, -1, ""COL_WHITE"Погода изменена на "COL_DEFAULT"%d"COL_WHITE".", myweather);
 
     return 1;
 }
@@ -1993,14 +1993,14 @@ CMD:w(playerid, params[])
 
 CMD:time(playerid, params[])
 {
-	if(isnull(params)) return SendClientMessage(playerid, -1, ""COL_BLACK"РСЃРїРѕР»СЊР·СѓР№С‚Рµ: /time [РІСЂРµРјСЏ].");
-	if(!IsNumeric(params)) return SendClientMessage(playerid,-1,""COL_DEFAULT"[РћРЁРР‘РљРђ] "COL_WHITE"Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ.");
+	if(isnull(params)) return SendClientMessage(playerid, -1, ""COL_BLACK"Используйте: /time [время].");
+	if(!IsNumeric(params)) return SendClientMessage(playerid,-1,""COL_DEFAULT"[ОШИБКА] "COL_WHITE"Введите число.");
 
 	new mytime;
 	mytime = strval(params);
 
 	SetPlayerTime(playerid, mytime, 0);
-    va_SendClientMessage(playerid, -1, ""COL_WHITE"Р’С‹ СѓСЃС‚Р°РЅРѕРІРёР»Рё РІСЂРµРјСЏ РЅР° "COL_DEFAULT"%d:00"COL_WHITE".", mytime);
+    va_SendClientMessage(playerid, -1, ""COL_WHITE"Вы установили время на "COL_DEFAULT"%d:00"COL_WHITE".", mytime);
     return 1;
 }
 
@@ -2013,31 +2013,31 @@ CMD:t(playerid, params[])
 CMD:respawn(playerid, params[]){
 	new Float:Armour;
 	GetPlayerArmour(playerid, Armour);
-	if(Armour < 20.0) return SendClientMessage(playerid, -1, "Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ СЃРґРµР»Р°С‚СЊ СЂРµСЃРїР°РІРЅ.");
+	if(Armour < 20.0) return SendClientMessage(playerid, -1, "Вы не можете сделать респавн.");
 	SpawnPlayer(playerid);
 	return true;
 }
 
 CMD:kick(playerid, params[])
 {
-	//if(Player[playerid][Level] < 3) return SendClientMessage(playerid,-1,""COL_RED"[РћРЁРР‘РљРђ] "COL_WHITE"You need to be a higher admin level.");
+	//if(Player[playerid][Level] < 3) return SendClientMessage(playerid,-1,""COL_RED"[ОШИБКА] "COL_WHITE"You need to be a higher admin level.");
 
 	new Params[2][128];
 	sscanf(params, "s[128]s[128]", Params[0], Params[1]);
-	if(isnull(Params[0]) || !IsNumeric(Params[0])) return SendClientMessage(playerid,-1,""COL_BLACK"РСЃРїРѕР»СЊР·СѓР№С‚Рµ: /kick [playerid] [reason] - Kick player from the server.");
+	if(isnull(Params[0]) || !IsNumeric(Params[0])) return SendClientMessage(playerid,-1,""COL_BLACK"Используйте: /kick [playerid] [reason] - Kick player from the server.");
 	new pID = strval(Params[0]);
 
-	if(!IsPlayerConnected(pID)) return SendClientMessage(playerid,-1,""COL_RED"[РћРЁРР‘РљРђ] "COL_WHITE"Р­С‚РѕС‚ РёРіСЂРѕРє РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ");
-	//if(Player[pID][Level] >= Player[playerid][Level]) return SendClientMessage(playerid,-1,""COL_RED"[РћРЁРР‘РљРђ] "COL_WHITE"Can't kick someone of same or higher admin level.");
+	if(!IsPlayerConnected(pID)) return SendClientMessage(playerid,-1,""COL_RED"[ОШИБКА] "COL_WHITE"Этот игрок не подключён");
+	//if(Player[pID][Level] >= Player[playerid][Level]) return SendClientMessage(playerid,-1,""COL_RED"[ОШИБКА] "COL_WHITE"Can't kick someone of same or higher admin level.");
 
 	new bool:GiveReason;
 	if(isnull(Params[1])) GiveReason = false;
 	else GiveReason = true;
 
 	if(GiveReason == false) {
-		va_SendClientMessageToAll(-1,""COL_DEFAULT"РђРґРјРёРЅ{FFFFFF} %s"COL_DEFAULT" РєРёРєРЅСѓР» %s (%d).", eUser[playerid][Name], eUser[pID][Name], pID);
+		va_SendClientMessageToAll(-1,""COL_DEFAULT"Админ{FFFFFF} %s"COL_DEFAULT" кикнул %s (%d).", eUser[playerid][Name], eUser[pID][Name], pID);
 	} else {
-		va_SendClientMessageToAll(-1,""COL_DEFAULT"РђРґРјРёРЅ{FFFFFF} %s"COL_DEFAULT" РєРёРєРЅСѓР» %s (%d). РџСЂРёС‡РёРЅР°: %s", eUser[playerid][Name], eUser[pID][Name], pID, Params[1]);
+		va_SendClientMessageToAll(-1,""COL_DEFAULT"Админ{FFFFFF} %s"COL_DEFAULT" кикнул %s (%d). Причина: %s", eUser[playerid][Name], eUser[pID][Name], pID, Params[1]);
 	}
 
 
@@ -2051,15 +2051,15 @@ CMD:kick(playerid, params[])
 
 CMD:ban(playerid, params[])
 {
-	//if(Player[playerid][Level] < 3) return SendClientMessage(playerid,-1,""COL_RED"[РћРЁРР‘РљРђ] {FFFFFF}You need to be a higher РђРґРјРёРЅ level.");
+	//if(Player[playerid][Level] < 3) return SendClientMessage(playerid,-1,""COL_RED"[ОШИБКА] {FFFFFF}You need to be a higher Админ level.");
 
 	new Params[2][128];
 	sscanf(params, "s[128]s[128]", Params[0], Params[1]);
-	if(isnull(Params[0]) || !IsNumeric(Params[0])) return SendClientMessage(playerid,-1,""COL_BLACK"РСЃРїРѕР»СЊР·СѓР№С‚Рµ: /ban [playerid] [РџСЂРёС‡РёРЅР°] - Ban player.");
+	if(isnull(Params[0]) || !IsNumeric(Params[0])) return SendClientMessage(playerid,-1,""COL_BLACK"Используйте: /ban [playerid] [Причина] - Ban player.");
 	new pID = strval(Params[0]);
 
-	if(!IsPlayerConnected(pID)) return SendClientMessage(playerid,-1,""COL_RED"[РћРЁРР‘РљРђ] {FFFFFF}Р­С‚РѕС‚ РёРіСЂРѕРє РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ.");
-	//if(Player[pID][Level] >= Player[playerid][Level]) return SendClientMessage(playerid,-1,""COL_RED"[РћРЁРР‘РљРђ] {FFFFFF}Can't ban someone of same or higher РђРґРјРёРЅ level.");
+	if(!IsPlayerConnected(pID)) return SendClientMessage(playerid,-1,""COL_RED"[ОШИБКА] {FFFFFF}Этот игрок не подключён.");
+	//if(Player[pID][Level] >= Player[playerid][Level]) return SendClientMessage(playerid,-1,""COL_RED"[ОШИБКА] {FFFFFF}Can't ban someone of same or higher Админ level.");
 
 	new IP[50];
 	GetPlayerIp(pID, IP, sizeof(IP));
@@ -2070,10 +2070,10 @@ CMD:ban(playerid, params[])
 
 
 	if(GiveReason == false) {
-		va_SendClientMessageToAll(-1,""COL_DEFAULT"РђРґРјРёРЅ{FFFFFF} %s"COL_DEFAULT" Р·Р°Р±Р°РЅРёР» %s (%d) РЅР°.", eUser[playerid][Name], eUser[pID][Name], pID);
+		va_SendClientMessageToAll(-1,""COL_DEFAULT"Админ{FFFFFF} %s"COL_DEFAULT" забанил %s (%d) на.", eUser[playerid][Name], eUser[pID][Name], pID);
 //		Ban(pID);
 	} else {
-		va_SendClientMessageToAll(-1,""COL_DEFAULT"РђРґРјРёРЅ{FFFFFF} %s"COL_DEFAULT" Р·Р°Р±Р°РЅРёР» %s (%d) РЅР°. РџСЂРёС‡РёРЅР°: %s", eUser[playerid][Name], eUser[pID][Name], pID, Params[1]);
+		va_SendClientMessageToAll(-1,""COL_DEFAULT"Админ{FFFFFF} %s"COL_DEFAULT" забанил %s (%d) на. Причина: %s", eUser[playerid][Name], eUser[pID][Name], pID, Params[1]);
 //		BanEx(pID, Params[1]);
 	}
 
@@ -2087,28 +2087,28 @@ CMD:ginfo(playerid, params[]){
 	if(!IsNumeric(params)) return true;
 	if(isnull(params)) return true;
 	if(gangidd > gangs) return true;
-	va_SendClientMessage(playerid, -1, "{808080}[GANG INFO] {FFFFFF}Р‘Р°РЅРґР°: %s || ID: %d || Р’СЃРµРіРѕ Exp: %d || РќРёРєРЅРµР№Рј Р»РёРґРµСЂР°: -1", GangsNew[gangidd][Tag], gangidd, GangsNew[gangidd][Exp]);
+	va_SendClientMessage(playerid, -1, "{808080}[GANG INFO] {FFFFFF}Банда: %s || ID: %d || Всего Exp: %d || Никнейм лидера: -1", GangsNew[gangidd][Tag], gangidd, GangsNew[gangidd][Exp]);
 	return true;
 }
 
 CMD:gangcreate(playerid, params[]){
 	new Option[8], string[85];	
-	if(sscanf(params, "s[8]",Option)) return SendClientMessage(playerid, -1, "Р’РІРµРґРёС‚Рµ: /gangcreate [Tag]");
-	if(strlen(Option) < 1 || strlen(Option) > 8) return SendClientMessage(playerid, COLOR_WHITE, "Р’РІРµРґРёС‚Рµ: /gangcreate Tag [8 СЃРёРјРІРѕР»РѕРІ]");
-	if(eUser[playerid][GangId] != 0) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Р’С‹ СѓР¶Рµ СЃРѕСЃС‚РѕРёС‚Рµ РІ Р±Р°РЅРґРµ. Р’С‹Р№РґРёС‚Рµ СЃ РїРѕРјРѕС‰СЊСЋ /gangleave");
-	if(eUser[playerid][Level] < 2) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Р’С‹ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РєР°Рє РјРёРЅРёРјСѓРј РІС‚РѕСЂРѕРіРѕ СѓСЂРѕРІРЅСЏ");
+	if(sscanf(params, "s[8]",Option)) return SendClientMessage(playerid, -1, "Введите: /gangcreate [Tag]");
+	if(strlen(Option) < 1 || strlen(Option) > 8) return SendClientMessage(playerid, COLOR_WHITE, "Введите: /gangcreate Tag [8 символов]");
+	if(eUser[playerid][GangId] != 0) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Вы уже состоите в банде. Выйдите с помощью /gangleave");
+	if(eUser[playerid][Level] < 2) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Вы должны быть как минимум второго уровня");
 	format(string, sizeof(string), "SELECT * FROM `gangs` WHERE `tag` = '%q' LIMIT 1", Option);
 	new DBResult:result = db_query(db, string);
 	if (db_num_rows(result) == 1)
 	{	
-		SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Р”Р°РЅРЅС‹Р№ РєР»Р°РЅ С‚РµРі СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. РџСЂРёРґСѓРјР°Р№С‚Рµ РґСЂСѓРіРѕР№.");
+		SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Данный клан тег уже существует. Придумайте другой.");
 		return true;
 	}
 	db_free_result(result);
 	format(string, sizeof(string), "INSERT INTO `gangs`(`tag`,`dmg`,`leaderid`) VALUES('%s', '0', '%i')", Option, eUser[playerid][e_USER_SQLID]);
 	db_query(db, string);
 	gangs++;
-	va_SendClientMessage(playerid, -1, "{808080}[GANG] "COL_DEFAULT"Р’С‹ СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°Р»Рё Р±Р°РЅРґСѓ {FFFFFF}%s!", Option);
+	va_SendClientMessage(playerid, -1, "{808080}[GANG] "COL_DEFAULT"Вы успешно создали банду {FFFFFF}%s!", Option);
 	eUser[playerid][GangId] = gangs+1;
 	PlayerTextDrawShow(playerid, GangInfo[playerid]);
 	return true;
@@ -2118,25 +2118,25 @@ CMD:gangjoin(playerid, params[]){
 	new gangidd = strval(params);
 	if(!IsNumeric(params)) return true;
 	if(isnull(params)) return true;
-	if(eUser[playerid][GangId] != 0) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Р’С‹ СѓР¶Рµ СЃРѕСЃС‚РѕРёС‚Рµ РІ Р±Р°РЅРґРµ. Р’С‹Р№РґРёС‚Рµ СЃ РїРѕРјРѕС‰СЊСЋ /gangleave");
+	if(eUser[playerid][GangId] != 0) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Вы уже состоите в банде. Выйдите с помощью /gangleave");
 	//If lider etoi bandi ne v seti
 	new bool:gangleader = false;
 	foreach(new i: Player){
 		if(GangsNew[gangidd][LeaderId] == eUser[i][e_USER_SQLID]) gangleader = true;
 	}
-	if(gangleader == false) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Р›РёРґРµСЂР° СЌС‚РѕР№ Р±Р°РЅРґС‹ РЅРµС‚ РІ СЃРµС‚Рё! РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїРµСЂРµР·РІРѕРЅРёС‚Рµ РїРѕР·Р¶Рµ...");
-	//SendClientMessage(playerid, color, const message[]) Р”Р»СЏ РїРёРґРѕР±РёСЂР° Р»РёРґРµСЂР°
-	SendClientMessage(playerid, -1, ""COL_DEFAULT"Р’С‹ РїРѕРґР°Р»Рё Р·Р°СЏРІРєСѓ. РћР¶РёРґР°Р№С‚Рµ.");
+	if(gangleader == false) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Лидера этой банды нет в сети! Пожалуйста, перезвоните позже...");
+	//SendClientMessage(playerid, color, const message[]) Для пидобира лидера
+	SendClientMessage(playerid, -1, ""COL_DEFAULT"Вы подали заявку. Ожидайте.");
 	SetPVarInt(playerid, "GangWait", gangidd+1);
 	foreach(new i: Player){
-		if(eUser[i][e_USER_SQLID] == GangsNew[gangidd][LeaderId]) va_SendClientMessage(i, -1, "{808080}[GANG] {FFFFFF}РРіСЂРѕРє %s(%d) Р¶РµР»Р°РµС‚ РІСЃС‚СѓРїРёС‚СЊ РІ РІР°С€Сѓ Р±Р°РЅРґСѓ. /accept (РїСЂРёРЅСЏС‚СЊ) РёР»Рё /denied (РѕС‚РєР°Р·Р°С‚СЊ)", eUser[playerid][Name], playerid);
+		if(eUser[i][e_USER_SQLID] == GangsNew[gangidd][LeaderId]) va_SendClientMessage(i, -1, "{808080}[GANG] {FFFFFF}Игрок %s(%d) желает вступить в вашу банду. /accept (принять) или /denied (отказать)", eUser[playerid][Name], playerid);
 	}
 	return true;
 }
 
 CMD:gangtop(playerid, params[]){
 	new fulldialog[600], str[60];
-	fulldialog = "{ffffff}РњРµСЃС‚Рѕ\t\tРўРµРі [ID Р±Р°РЅРґС‹]\t\t  Р РµСЃРїРµРєС‚РѕРІ\n\n";
+	fulldialog = "{ffffff}Место\t\tТег [ID банды]\t\t  Респектов\n\n";
 	new DBResult:result = db_query(db, "SELECT * FROM `gangs` ORDER BY `dmg` DESC LIMIT 10");
 
     for(new i = 0; i < db_num_rows(result); i++){
@@ -2148,30 +2148,30 @@ CMD:gangtop(playerid, params[]){
         db_next_row(result);
     }
     db_free_result( result );   
-    Dialog_Show(playerid, 1488, DIALOG_STYLE_MSGBOX, "РўРѕРї 10 Р±Р°РЅРґ", fulldialog, "Р“РѕС‚РѕРІРѕ", "");	
+    Dialog_Show(playerid, 1488, DIALOG_STYLE_MSGBOX, "Топ 10 банд", fulldialog, "Готово", "");	
 	return true;
 }	
 
 CMD:accept(playerid, params[]){
 	new targetid = strval(params);
-	if(!IsNumeric(params)) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}РћС€РёР±РєР° 1");
-	if(GetPVarInt(targetid, "GangWait") != eUser[playerid][GangId]) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}РћС€РёР±РєР° 2");
+	if(!IsNumeric(params)) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Ошибка 1");
+	if(GetPVarInt(targetid, "GangWait") != eUser[playerid][GangId]) return SendClientMessage(playerid, -1, "{808080}[GANG] {FFFFFF}Ошибка 2");
 	// if eto ne lider
 	eUser[targetid][GangId] = eUser[playerid][GangId];
 	PlayerTextDrawShow(targetid, GangInfo[targetid]);
 	foreach(new i: Player){
 		if(eUser[playerid][GangId] == eUser[i][GangId]){
-			va_SendClientMessage(i, -1, "{808080}[GANG] "COL_DEFAULT"%s РїСЂРёСЃРѕРµРґРёРЅРёР»СЃСЏ Рє Р±Р°РЅРґРµ!", eUser[targetid][Name]);
+			va_SendClientMessage(i, -1, "{808080}[GANG] "COL_DEFAULT"%s присоединился к банде!", eUser[targetid][Name]);
 		}
 	}	
 	return true;
 }
 
 CMD:leave(playerid, params[]){
-	if(eUser[playerid][GangId] == 0) return SendClientMessage(playerid, -1, "Р’С‹ РЅРµ СЃРѕСЃС‚РѕРёС‚Рµ РІ Р±Р°РЅРґРµ.");
+	if(eUser[playerid][GangId] == 0) return SendClientMessage(playerid, -1, "Вы не состоите в банде.");
 	foreach(new i: Player){
 		if(eUser[playerid][GangId] == eUser[i][GangId]){
-			va_SendClientMessage(i, -1, "{808080}[GANG] "COL_DEFAULT"%s РІС‹С€РµР» РёР· РІР°С€РµР№ Р±Р°РЅРґС‹.", eUser[playerid][Name]);
+			va_SendClientMessage(i, -1, "{808080}[GANG] "COL_DEFAULT"%s вышел из вашей банды.", eUser[playerid][Name]);
 		}
 	}
 	PlayerTextDrawHide(playerid, GangInfo[playerid]);
@@ -2183,9 +2183,9 @@ CMD:leave(playerid, params[]){
 CMD:duel(playerid, params[]){
 	if(GetPVarInt(playerid, "ReadyToDuel") == 1) return true;
 	if(GetPVarInt(playerid, "ReadyToDuel") == 2) return true;	
-	va_SendClientMessageToAll(-1, ""COL_RED"%s(%d) {FFFFFF}С…РѕС‡РµС‚ РґСѓРµР»СЊ. Р§С‚РѕР±С‹ РѕС‚РІРµС‚РёС‚СЊ РµРјСѓ, РЅР°РїРёС€РёС‚Рµ "COL_DEFAULT"/go %d", eUser[playerid][Name], playerid, playerid);
+	va_SendClientMessageToAll(-1, ""COL_RED"%s(%d) {FFFFFF}хочет дуель. Чтобы ответить ему, напишите "COL_DEFAULT"/go %d", eUser[playerid][Name], playerid, playerid);
 	SetPVarInt(playerid, "ReadyToDuel", 1);
-	SendClientMessage(playerid, -1, ""COL_DEFAULT"РћР¶РёРґР°Р№С‚Рµ. Р§РµСЂРµР· 8 СЃРµРєСѓРЅРґ РІР°С€Рµ РїСЂРµРґР»РѕР¶РµРЅРёРµ РѕС‚РјРµРЅРёС‚СЃСЏ.");
+	SendClientMessage(playerid, -1, ""COL_DEFAULT"Ожидайте. Через 8 секунд ваше предложение отменится.");
 	DuelTimer[playerid] = SetTimerEx("Otkat", 8000, false, "i", playerid);
 	return true;
 }
@@ -2201,7 +2201,7 @@ CMD:go(playerid, params[]){
 	if(GetPVarInt(playerid, "ReadyToDuel") == 1) return true;
 	if(GetPVarInt(playerid, "ReadyToDuel") == 2) return true;		
 	if(GetPVarInt(targetid, "ReadyToDuel") == 2) return true;		
-	if(GetPVarInt(targetid, "ReadyToDuel") == 0) return SendClientMessage(playerid, -1, "Р­С‚РѕС‚ РёРіСЂРѕРє РЅРµ С…РѕС‡РµС‚ РґСѓРµР»СЊ.");
+	if(GetPVarInt(targetid, "ReadyToDuel") == 0) return SendClientMessage(playerid, -1, "Этот игрок не хочет дуель.");
 	SetPlayerPos(playerid, 1417.5233,-17.1838,1000.9268);
 	SetPlayerPos(targetid, 1361.9303,-15.6455,1000.9219);
 	SetPlayerInterior(playerid, 1);
@@ -2281,7 +2281,7 @@ public HideWeaponObject(playerid)
 }
 
 public OnPlayerText(playerid, text[]){
-    if(GetTickCount() < GetPVarInt(playerid, "ChatTime")) { SendClientMessage(playerid, -1, ""COL_WHITE"[РћС€РёР±РєР°] "COL_DEFAULT"РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїРѕРґРѕР¶РґРёС‚Рµ!"); return false; }
+    if(GetTickCount() < GetPVarInt(playerid, "ChatTime")) { SendClientMessage(playerid, -1, ""COL_WHITE"[Ошибка] "COL_DEFAULT"Пожалуйста, подождите!"); return false; }
 	SetPVarInt(playerid, "ChatTime", GetTickCount()+1000);	
 	if(text[0] == '!') {
 		foreach(new i: Player)
@@ -2344,7 +2344,7 @@ public OnScriptUpdate()
 					zones[arena][Exp] = gangexp;
 					zones[arena][Gangid] = gangidd;
 					HideZoneForAll(arena), ShowZoneForAll(arena,GetClanColor(arena),0xFFFFFFFF,0xFFFFFFFF);
-					va_SendClientMessageToAll(-1, ""COL_RED"%s {FFFFFF}Р·Р°С…РІР°С‚РёР»Рё Р°СЂРµРЅСѓ РЅРѕРјРµСЂ "COL_DEFAULT"%d!", GangsNew[gangidd][Tag], arena);
+					va_SendClientMessageToAll(-1, ""COL_RED"%s {FFFFFF}захватили арену номер "COL_DEFAULT"%d!", GangsNew[gangidd][Tag], arena);
 				}	
 				ZoneNumberStopFlashForAll(arena), arena = random(MAX_ZONES), PrepareChangeArena();
 				return true;
@@ -2371,7 +2371,7 @@ public teensecupdate(){
 	for(new g = 0; g < gangs; g++){
 	    format(string, sizeof(string), "UPDATE `gangs` SET `dmg` = '%i' WHERE `id` = '%i'", GangsNew[g][Exp], g+1);
 	    db_query(db, string);
-	    printf("РЎРѕС…СЂР°РЅРёР» %d", g);
+	    printf("Сохранил %d", g);
 	}	
 	for(new a = 0; a < MAX_ZONES; a++){
 	    format(string, sizeof(string), "UPDATE `zones` SET `Gangid` = '%i', `Exp` = '%i' WHERE `id` = '%i'", zones[a][Gangid], zones[a][Exp], a+1);
@@ -2434,7 +2434,7 @@ public ChangeArena()
 	new iString[21];
 	format(iString, 21, "language Arena %d", arena);
 	SendRconCommand(iString);
-	va_SendClientMessageToAll(-1,"{FFFFFF}РђСЂРµРЅР° {FF0000}(ID: %d) {FFFFFF}Р·Р°РїСѓС‰РµРЅР°!", arena);
+	va_SendClientMessageToAll(-1,"{FFFFFF}Арена {FF0000}(ID: %d) {FFFFFF}запущена!", arena);
 	foreach(new i: Player){
 		if(GetPVarInt(i, "ReadyToDuel") == 0){
 			SpawnPlayer(i);
@@ -2554,21 +2554,21 @@ public RandomMessages(){
 
 public OnPlayerCommandReceived(playerid, cmdtext[])
 {
-    if(GetTickCount() < GetPVarInt(playerid, "ChatTime")) { SendClientMessage(playerid, -1, ""COL_WHITE"[РћС€РёР±РєР°] "COL_DEFAULT"РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїРѕРґРѕР¶РґРёС‚Рµ!"); return false; }
+    if(GetTickCount() < GetPVarInt(playerid, "ChatTime")) { SendClientMessage(playerid, -1, ""COL_WHITE"[Ошибка] "COL_DEFAULT"Пожалуйста, подождите!"); return false; }
 	SetPVarInt(playerid, "ChatTime", GetTickCount()+1000);
 	if(GetPVarInt(playerid, "ReadyToDuel") == 2){
-		SendClientMessage(playerid, 0xFFFFFFFF, "{C0C0C0} Р’С‹ РёРіСЂР°РµС‚Рµ СЃ РєРµРј-С‚Рѕ РґСѓРµР»СЊ.");
+		SendClientMessage(playerid, 0xFFFFFFFF, "{C0C0C0} Вы играете с кем-то дуель.");
 		return false;
 	}
 	if(GetPVarInt(playerid, "onafk") == 1 && strcmp(cmdtext, "afk", true)){
-		SendClientMessage(playerid, 0xFFFFFFFF, "{C0C0C0} Р’С‹ РЅР°С…РѕРґРёС‚РµСЃСЊ РІ РєРѕРјРЅР°С‚Рµ РѕС‚РґС‹С…Р°.");
-		SendClientMessage(playerid, 0xFFFFFFFF, "{C0C0C0} РСЃРїРѕР»СЊР·СѓР№С‚Рµ {3667E9}/afk{C0C0C0}, С‡С‚РѕР±С‹ РІС‹Р№С‚Рё.");
+		SendClientMessage(playerid, 0xFFFFFFFF, "{C0C0C0} Вы находитесь в комнате отдыха.");
+		SendClientMessage(playerid, 0xFFFFFFFF, "{C0C0C0} Используйте {3667E9}/afk{C0C0C0}, чтобы выйти.");
 		return false;		
 	}
 
 	if(!IsPlayerSpawned(playerid))
 	{
-		SendClientMessage(playerid, -1, "[РћС€РёР±РєР°]: {C0C0C0}Р’С‹ РЅРµ Р·Р°СЃРїР°РІРЅРµРЅС‹.");
+		SendClientMessage(playerid, -1, "[Ошибка]: {C0C0C0}Вы не заспавнены.");
 		return false;
 	}		
     return true;
@@ -2587,7 +2587,7 @@ public OnPlayerCommandPerformed(playerid, cmdtext[], success)
 {
 	if(success == 0)
 	{
-		SendClientMessage(playerid, 0xCE0000FF, "<< {FFFFFF}РќРµРёР·РІРµСЃС‚РЅР°СЏ РєРѕРјР°РЅРґР° {CE0000}>>");
+		SendClientMessage(playerid, 0xCE0000FF, "<< {FFFFFF}Неизвестная команда {CE0000}>>");
 		return true;
 	}
 	return true;
@@ -2636,7 +2636,7 @@ stock GetClanColorForPlayer(playerid){
 /*public OnPlayerClickTextDraw(playerid, Text:clickedid)
 {
     if(clickedid == RequestClass) {
-    	Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Р’С‹Р±РѕСЂ РѕСЂСѓР¶РёСЏ", "1 СЃР»РѕС‚\n2 СЃР»РѕС‚\n3 СЃР»РѕС‚\n4 СЃР»РѕС‚", "Р’С‹Р±СЂР°С‚СЊ", "Р—Р°РєСЂС‹С‚СЊ");
+    	Dialog_Show(playerid, DIALOG_CHANGE, DIALOG_STYLE_LIST, "Выбор оружия", "1 слот\n2 слот\n3 слот\n4 слот", "Выбрать", "Закрыть");
     }	
     return 1;
 }*/
